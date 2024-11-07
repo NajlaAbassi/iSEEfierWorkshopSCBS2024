@@ -3,12 +3,10 @@ title: "Streamlining Omics Data Visualization with iSEE and iSEEfier"
 author: "Najla Abassi[^najla.abassi@uni-mainz.de]"  
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{An Example Workshop}
+  %\VignetteIndexEntry{workshop_iSEEfier}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
-[^workshop_iSEEfier-1]: [najla.abassi\@uni-mainz.de](mailto:najla.abassi@uni-mainz.de){.email}
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -75,7 +73,7 @@ Also of note:
 Now we can launch an `r BiocStyle::Biocpkg("iSEE")` instance and start exploring this dataset using the `iSEE()` function without any further argument. This will produce an app using the default configuration; that is, the app instance will include one panel of each built-in class for which the relevant information is available in the `SingleCellExperiment` object.
 
 ```{r createApp}
-app <- iSEE(sce)
+app <- iSEE::iSEE(sce)
 ```
 
 ```{r launchApp, message=FALSE, eval=FALSE}
@@ -95,7 +93,7 @@ The reduced dimension plot can display any reduced dimension representation that
 Note that this slot is not defined for the base `SummarizedExperiment` class, in which case the user interface does not allow the inclusion of panels of this type.
 
 ```{r reddim, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(ReducedDimensionPlot()))
+app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot()))
 ```
 
 ```{r reddimplot, echo=FALSE, out.width='100%'}
@@ -107,7 +105,7 @@ webshot2::appshot(app,"img/isee-reduceddimensionplot.png", delay = 10)
 The column data plot can display one or two of the provided column annotations (from the `colData` slot). Depending on the class of the selected annotations, the panel shows either a scatter plot, a violin plot, or a Hinton diagram [@Hinton1991-hintondiagram; @Bremner1994-hintonplots].
 
 ```{r coldata, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(ColumnDataPlot()))
+app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot()))
 ```
 
 ```{r coldataplot, echo=FALSE, out.width='100%'}
@@ -119,7 +117,7 @@ webshot2::appshot(app, "img/isee-columndataplot.png", delay = 10)
 Analogous to the [column data plot](#coldataplot) above, the row data plot displays one or two of the provided row annotations (from the `rowData` slot). Depending on the class of the selected annotations, the panel displays either a scatter plot, a violin plot, or a Hinton plot.
 
 ```{r rowdata, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(RowDataPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(RowDataPlot(PanelWidth = 12L)))
 ```
 
 ```{r rowdataplot, echo=FALSE, out.width='100%'}
@@ -131,7 +129,7 @@ webshot2::appshot(app, "img/isee-rowdataplot.png", delay = 10)
 The complex heatmap panel displays, for any assay, the observed values for a subset of the features across the samples.
 
 ```{r heatmap, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(ComplexHeatmapPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(ComplexHeatmapPlot(PanelWidth = 12L)))
 ```
 
 ```{r cmplxHeatmap, echo=FALSE, out.width='100%'}
@@ -143,7 +141,7 @@ webshot2::appshot(app, "img/isee-complexheatmapplot.png", delay = 10)
 The feature assay plot displays the observed values for one feature across the samples. It is also possible to plot the observed values for two features, in a scatter plot.
 
 ```{r featureassay, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L)))
 ```
 
 ```{r featureassayplot, echo=FALSE, out.width='100%'}
@@ -155,7 +153,7 @@ webshot2::appshot(app, "img/isee-featureassayplot.png", delay = 10)
 Analogous to the [`r .fullName(FeatureAssayPlot())`](#featassayplot) above, the `r .fullName(SampleAssayPlot())` shows the observed values for all features, for one of the samples. It is also possible to plot the observed values for two samples, in a scatter plot.
 
 ```{r sampleassay, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(SampleAssayPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(SampleAssayPlot(PanelWidth = 12L)))
 ```
 
 ```{r sampleassayplot, echo=FALSE, out.width='100%'}
@@ -167,7 +165,7 @@ webshot2::appshot(app, "img/isee-sampleassayplot.png", delay = 10)
 The row data table displays all information provided in the `rowData` slot of the `SummarizedExperiment` object, leveraging the interactivity provided by the `r BiocStyle::CRANpkg("DT")` package.
 
 ```{r rowdatatab, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(RowDataTable(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(RowDataTable(PanelWidth = 12L)))
 ```
 
 ```{r rowdatatab1, echo=FALSE, out.width='100%'}
@@ -179,7 +177,7 @@ webshot2::appshot(app, "img/isee-rowdatatable.png", delay = 10)
 Analogous to the [`r .fullName(RowDataTable())`](#rowdatatable) above, the column data table displays all information provided in the `colData` slot of the `SummarizedExperiment` object.
 
 ```{r coldatatab, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(ColumnDataTable(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(ColumnDataTable(PanelWidth = 12L)))
 ```
 
 ```{rcoldatatab1, echo=FALSE, out.width='100%'}
@@ -193,7 +191,7 @@ webshot2::appshot(app, "img/isee-columndatatable.png", delay = 10)
 Each plot panel type has a `Data parameters` collapsible box. This box has different content for each panel type, but in all cases it lets the user control the data that is displayed in the plot.
 
 ```{r datapram, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
 ```
 
 ```{r dataparam1, echo=FALSE, out.width='100%'}
@@ -207,7 +205,7 @@ In contrast to the `Data parameters` collapsible box that lets users control *wh
 This collapsible box contains the controls to change the size, shape, opacity, and color of the points, to facet the plot by any available categorical annotation, to subsample points for increased speed of plot rendering, and to control how legends are displayed.
 
 ```{r vizparam, message=FALSE, echo=FALSE}
-app <- iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
 ```
 
 ```{r vizparam1, echo=FALSE, out.width='100%'}
@@ -221,7 +219,7 @@ The `Selection parameters` collapsible box provides controls to transfer selecti
 We demonstrate examples of point transmission in the separate vignette of [workshop recipes](recipes.html)
 
 ```{r selecparam, message=FALSE, echo = FALSE}
-app <- iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L)))
 ```
 
 ```{r selecparam1, echo=FALSE, out.width='100%'}
