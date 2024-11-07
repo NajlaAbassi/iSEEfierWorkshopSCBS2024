@@ -12,15 +12,12 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
-Depends: 
-    Biobase
-Imports:
+RoxygenNote: 7.3.2
+Depends:
     iSEE,
-    iSEEfier,
-    SummarizedExperiment,
-    SingleCellExperiment,
-    shiny
+    iSEEfier
+Imports:
+    SingleCellExperiment
 Suggests: 
     knitr,
     rmarkdown,
