@@ -1,9 +1,9 @@
 ---
-title: "Streamlining Omics Data Visualization with iSEE and iSEEfier"
+title: "iSEE_and_iSEEfier_Workshop"
 author: "Najla Abassi[^najla.abassi@uni-mainz.de]"  
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{workshop_iSEEfier}
+  %\VignetteIndexEntry{iSEE_and_iSEEfier_Workshop}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -238,6 +238,110 @@ additional_info_fig <- "img/AdditionalInfo.png"
 ```
 
 ## Introduction to `iSEEfier`
+
+Now we have seen how powerful of a tool iSEE can be. However
+
+# iSEEfier
+
+Let's say we are interested in visualizing the expression of a list of specific marker genes in one view, or maybe we created different initial states separately, but would like to visualize them in the same instance. As we previously learned, we can do a lot of these tasks by running the command:
+
+```{r, eval=FALSE}
+# don't run
+iSEE(sce)
+```
+
+Then, add/remove the panels to our need. This can involve multiple steps (selecting the gene of interest, color by a specific `colData`...), or probably even write multiple lines of code.
+For that we can use the `r Biocpkg("iSEEfier")` package, which streamlines the process of starting (or if you will, firing up) an `iSEE` instance with a small chunk of code, avoiding the tedious way of setting up every `iSEE` panel individually.
+
+In this section, we will illustrate a simple example of how to use `r Biocpkg("iSEEfier")`. We will use the same pbmc3k data we worked with during this workshop.
+
+We start by loading the data:
+
+```{r, eval=FALSE}
+library("iSEEfier")
+
+# import data
+sce <- readRDS(
+  file = system.file("datasets", "sce_pbmc3k.RDS", package = "iUSEiSEE")
+)
+
+sce
+```
+
+For example, we can be interested in visualizing the expression of *GZMB*, *TGFB*, and *CD28* genes all at once. We start by providing a couple of parameters:
+
+```{r, eval=FALSE}
+# define the list of genes
+feature_list_1 <- c("GZMB", "TGFB1", "CD28")
+# define the cluster/cell type 
+cluster_1 <- "labels_main"
+```
+
+Now we can pass these parameters into `iSEEinit()` to create a customized initial configuration:
+
+```{r, eval=FALSE}
+# create an initial state with iSEEinit
+initial_1 <- iSEEinit(sce,
+                      features = feature_list_1,
+                      clusters = cluster_1,
+                      add_markdown_panel = TRUE)
+```
+
+The rest can be as easy as passing this initial to the `iSEE()` call:
+
+```{r, eval=FALSE}
+app <- iSEE(sce, initial = initial_1)
+```
+
+This is how it would look like:
+
+```{r, echo=FALSE, out.width='100%', eval=FALSE}
+SCREENSHOT("images/isee-on-fier.png", delay = 30)
+```
+
+
+While we are visualizing the expression of these genes, we might want to take some notes (gene X is more expressed in a certain cell type/cluster than some others, maybe we are trying to annotate the cells ourselves if the annotation wasn't available...).  
+For this, we used the argument `add_markdown_panel = TRUE`. It will display a `MarkdownBoard` panel where we can note our observations without leaving the app.
+
+We can also use the argument `add_dynamicTable_panel=TRUE` to add another custom panel to display the maker genes of certain cluster/cell type.
+
+```{r, eval=FALSE}
+feature_list_2 <- c("CD74", "CD79B")
+initial_2 <- iSEEinit(sce,
+                      features = feature_list_2,
+                      clusters = cluster_1,
+                      add_markdown_panel = TRUE,
+                      add_dynamicTable_panel = TRUE)
+```
+
+```{r, eval=FALSE}
+app <- iSEE(sce, initial = initial_2)
+```
+
+We can check the initial's content, or how the included panels are linked between each other without running the app with `view_initial_tiles()` and `view_initial_network()`:
+
+```{r, eval=FALSE}
+# display a graphical representation of the initial configuration, where the panels are identified by their corresponding colors
+view_initial_tiles(initial = initial_1)
+# display a network visualization for the panels
+view_initial_network(initial_1, plot_format = "igraph")
+```
+
+Another alternative for network visualization would use the interactive widget provided by `visNetwork`:
+
+```{r, eval=FALSE}
+view_initial_network(initial_1, plot_format = "visNetwork")
+```
+
+It is also possible to combine multiple initials into one:
+
+```{r, eval=FALSE}
+merged_config <- glue_initials(initial_1, initial_2)
+# check out the content of merged_config
+view_initial_tiles(initial = merged_config)
+```
+
+`?iSEEfier` is always your friend whenever you need further documentation on the package/a certain function and how to use it.
 
 ## Session info {.unnumbered}
 
