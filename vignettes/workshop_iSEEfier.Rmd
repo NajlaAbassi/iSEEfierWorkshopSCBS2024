@@ -1,6 +1,7 @@
 ---
 title: "iSEE_and_iSEEfier_Workshop"
-author: "Najla Abassi[^najla.abassi@uni-mainz.de]"  
+author: "Najla Abassi[^workshop_iSEEfier-1]^[najla.abassi@uni-mainz.de] <br>
+  This workshop was adapted from the collection of material developed by the `iSEE` core development team"  
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{iSEE_and_iSEEfier_Workshop}
@@ -15,42 +16,29 @@ comment = "#>"
 )
 ```
 
+[^workshop_iSEEfier-1]: Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), University Medical Center, Mainz, Germany
+Last modified: "`r Sys.Date()`" <br/>
+
 # Streamlining Omics Data Visualization with `iSEE` and `iSEEfier`
 
-Workshop adapted from the collection of material developed by the iSEE core dev team
-
-Authors: Najla Abassi[^workshop_iSEEfier-2]. <br/> Last modified: "`r Sys.Date()`"
-
-[^workshop_iSEEfier-2]: Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), University Medical Center, Mainz, Germany
-
 ## Introduction to `iSEE`
+
+The `r BiocStyle::Biocpkg("iSEE")` package is a flexible, powerful and extendible application to explore and visualize any omics datas, including single cell and spatially resolved data.
 
 ### Input data
 
 `r BiocStyle::Biocpkg("iSEE")` was designed around the `r BiocStyle::Biocpkg("SummarizedExperiment")` class, a container widely used throughout the *Bioconductor* project. Briefly, the `r BiocStyle::Biocpkg("SummarizedExperiment")` class provides a container keeping matrices of assay data, sample metadata, and feature metadata. ![SummarizedExperiment (source: the package vignette; \<https://bioconductor.org/packages/SummarizedExperiment/\\\\\\\>).](img/SummarizedExperiment.png)
 
-Now we will start by loading a demonstration dataset of single cell RNAseq dataset from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216). The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")` Bioconductor package, and is stored in an object of class `r BiocStyle::Biocpkg("SingleCellExperiment")`, which is a class that inherits from the `SummarizedExperiment` class. It includes additional slots and methods like metadata related to individual cells and their associated dimensionality reductions. We processed the data beforehand to save some time.
+In this workshop we will use a demonstration dataset of single cell RNAseq from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216). The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")` Bioconductor package, and is stored in an object of class `r BiocStyle::Biocpkg("SingleCellExperiment")`, which is a class that inherits from the `SummarizedExperiment` class. It includes additional slots and methods like metadata related to individual cells and their associated dimensionality reductions. ![SingleCellExperiment (source: the package vignette; \<https://bioconductor.org/packages/SingleCellExperiment/\\\\\\\>).](SingleCellExperiment.png)
+We processed the data beforehand to save some time.
 
-```{r process_data, eval=FALSE, echo=FALSE}
-# load data
-sce <- scRNAseq::ReprocessedAllenData(assays="tophat_counts")
-# rename tophat_counts to counts
-assayNames(sce)[assayNames(sce) == "tophat_counts"] <- "counts"
-# log transform the counts
-sce <- scuttle::logNormCounts(sce)
-# add dimensionality reduction coordinates
-sce <- scater::runPCA(sce)
-sce <- scater::runTSNE(sce)
-sce <- scater::runUMAP(sce)
-saveRDS(sce,"sce_allen.RDS")
-```
 
 ```{r loadlib, message=FALSE,warning=FALSE}
 library("iSEEfierWorkshopSCBS2024")
 ```
 
 ```{r loaddata}
-sce <- readRDS("data/sce_allen.RDS")
+sce <- sce
 sce
 ```
 
@@ -80,13 +68,11 @@ app <- iSEE::iSEE(sce)
 runApp(app,launch.browser = TRUE)
 ```
 
-```{r defaultApp, echo=FALSE, out.width='100%'}
-webshot2::appshot(app,"img/vanilla-isee.png", delay = 10)
-```
+![vanilla-iSEE](img/iSEE_default.png)
 
-# The built-in panel types
+### The built-in panel types
 
-## `ReducedDimensionPlot`
+#### `ReducedDimensionPlot`
 
 The reduced dimension plot can display any reduced dimension representation that is present in the `reducedDim` slot of the `SingleCellExperiment` object.
 
@@ -96,11 +82,9 @@ Note that this slot is not defined for the base `SummarizedExperiment` class, in
 app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot()))
 ```
 
-```{r reddimplot, echo=FALSE, out.width='100%'}
-webshot2::appshot(app,"img/isee-reduceddimensionplot.png", delay = 10)
-```
+![reduceddimensionplot-iSEE](img/isee-reduceddimensionplot.png)
 
-## `ColumnDataPlot`
+#### `ColumnDataPlot`
 
 The column data plot can display one or two of the provided column annotations (from the `colData` slot). Depending on the class of the selected annotations, the panel shows either a scatter plot, a violin plot, or a Hinton diagram [@Hinton1991-hintondiagram; @Bremner1994-hintonplots].
 
@@ -108,23 +92,9 @@ The column data plot can display one or two of the provided column annotations (
 app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot()))
 ```
 
-```{r coldataplot, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-columndataplot.png", delay = 10)
-```
+![columndataplot-iSEE](img/isee-columndataplot.png)
 
-## `RowDataPlot`
-
-Analogous to the [column data plot](#coldataplot) above, the row data plot displays one or two of the provided row annotations (from the `rowData` slot). Depending on the class of the selected annotations, the panel displays either a scatter plot, a violin plot, or a Hinton plot.
-
-```{r rowdata, message=FALSE, echo = FALSE}
-app <- iSEE::iSEE(sce, initial = list(RowDataPlot(PanelWidth = 12L)))
-```
-
-```{r rowdataplot, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-rowdataplot.png", delay = 10)
-```
-
-## `ComplexHeatmapPlot`
+#### `ComplexHeatmapPlot`
 
 The complex heatmap panel displays, for any assay, the observed values for a subset of the features across the samples.
 
@@ -132,11 +102,9 @@ The complex heatmap panel displays, for any assay, the observed values for a sub
 app <- iSEE::iSEE(sce, initial = list(ComplexHeatmapPlot(PanelWidth = 12L)))
 ```
 
-```{r cmplxHeatmap, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-complexheatmapplot.png", delay = 10)
-```
+![complexheatmapplot-iSEE](img/isee-complexheatmapplot.png)
 
-## `FeatureAssayPlot`
+#### `FeatureAssayPlot`
 
 The feature assay plot displays the observed values for one feature across the samples. It is also possible to plot the observed values for two features, in a scatter plot.
 
@@ -144,11 +112,9 @@ The feature assay plot displays the observed values for one feature across the s
 app <- iSEE::iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L)))
 ```
 
-```{r featureassayplot, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-featureassayplot.png", delay = 10)
-```
+![featureassayplot-iSEE](img/isee-featureassayplot.png)
 
-## `SampleAssayPlot`
+#### `SampleAssayPlot`
 
 Analogous to the [`r .fullName(FeatureAssayPlot())`](#featassayplot) above, the `r .fullName(SampleAssayPlot())` shows the observed values for all features, for one of the samples. It is also possible to plot the observed values for two samples, in a scatter plot.
 
@@ -156,11 +122,9 @@ Analogous to the [`r .fullName(FeatureAssayPlot())`](#featassayplot) above, the 
 app <- iSEE::iSEE(sce, initial = list(SampleAssayPlot(PanelWidth = 12L)))
 ```
 
-```{r sampleassayplot, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-sampleassayplot.png", delay = 10)
-```
+![sampleassayplot-iSEE](img/isee-sampleassayplot.png)
 
-## `RowDataTable` {#rowdatatable}
+#### `RowDataTable` 
 
 The row data table displays all information provided in the `rowData` slot of the `SummarizedExperiment` object, leveraging the interactivity provided by the `r BiocStyle::CRANpkg("DT")` package.
 
@@ -168,11 +132,9 @@ The row data table displays all information provided in the `rowData` slot of th
 app <- iSEE::iSEE(sce, initial = list(RowDataTable(PanelWidth = 12L)))
 ```
 
-```{r rowdatatab1, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-rowdatatable.png", delay = 10)
-```
+![rowdatatable-iSEE](img/isee-rowdatatable.png)
 
-## `ColumnDataTable`
+#### `ColumnDataTable`
 
 Analogous to the [`r .fullName(RowDataTable())`](#rowdatatable) above, the column data table displays all information provided in the `colData` slot of the `SummarizedExperiment` object.
 
@@ -180,13 +142,11 @@ Analogous to the [`r .fullName(RowDataTable())`](#rowdatatable) above, the colum
 app <- iSEE::iSEE(sce, initial = list(ColumnDataTable(PanelWidth = 12L)))
 ```
 
-```{rcoldatatab1, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-columndatatable.png", delay = 10)
-```
+![columndatatable-iSEE](img/isee-columndatatable.png)
 
-# Collapsible boxes with display controls
+### Collapsible boxes with display controls
 
-## Data parameters
+#### Data parameters
 
 Each plot panel type has a `Data parameters` collapsible box. This box has different content for each panel type, but in all cases it lets the user control the data that is displayed in the plot.
 
@@ -194,11 +154,10 @@ Each plot panel type has a `Data parameters` collapsible box. This box has diffe
 app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
 ```
 
-```{r dataparam1, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-columndataplot-dataparameters.png", delay = 10)
-```
+![columndataplot-iSEE](img/isee-columndataplot-dataparameters.png)
 
-## Visual parameters
+
+#### Visual parameters
 
 In contrast to the `Data parameters` collapsible box that lets users control *what* is displayed in the plot, the `Visual parameters` box lets users control *how* the information is displayed.
 
@@ -208,11 +167,9 @@ This collapsible box contains the controls to change the size, shape, opacity, a
 app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
 ```
 
-```{r vizparam1, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-columndataplot-visualparameters.png", delay = 10)
-```
+![columndataplot-visualparameters-iSEE](img/isee-columndataplot-visualparameters.png)
 
-## Selection parameters
+#### Selection parameters
 
 The `Selection parameters` collapsible box provides controls to transfer selections of points (features or samples) between panels.
 
@@ -222,38 +179,23 @@ We demonstrate examples of point transmission in the separate vignette of [works
 app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L)))
 ```
 
-```{r selecparam1, echo=FALSE, out.width='100%'}
-webshot2::appshot(app, "img/isee-reduceddimensionplot-selectionparameters.png", delay = 10)
-```
+![reduceddimensionplot-selectionparameters-iSEE](img/isee-reduceddimensionplot-selectionparameters.png)
 
-# Additional controls
-
-At the top-right corner of the iSEE application, users can find additional controls for reproducibility, configuration, and help.
-
-```{r addcontrol, echo = FALSE, eval = TRUE}
-panel_organization_fig <- "img/PanelOrganization.png"
-export_fig <- "img/Export.png"
-documentation_fig <- "img/Documentation.png"
-additional_info_fig <- "img/AdditionalInfo.png"
-```
 
 ## Introduction to `iSEEfier`
 
-Now we have seen how powerful of a tool iSEE can be. However
-
-# iSEEfier
-
-Let's say we are interested in visualizing the expression of a list of specific marker genes in one view, or maybe we created different initial states separately, but would like to visualize them in the same instance. As we previously learned, we can do a lot of these tasks by running the command:
+Now we have seen how powerful of a tool `iSEE` can be. As we previously learned, we can do a lot of tasks by running the command:
 
 ```{r, eval=FALSE}
 # don't run
 iSEE(sce)
 ```
 
-Then, add/remove the panels to our need. This can involve multiple steps (selecting the gene of interest, color by a specific `colData`...), or probably even write multiple lines of code.
-For that we can use the `r Biocpkg("iSEEfier")` package, which streamlines the process of starting (or if you will, firing up) an `iSEE` instance with a small chunk of code, avoiding the tedious way of setting up every `iSEE` panel individually.
+Then, add/remove the panels to our need. This can involve multiple steps (selecting the gene of interest, color by a specific `colData`...), or probably even write multiple lines of code. However, it can be cumbersome to set up the visualization session repeatedly, especially if it requires configuring the same panel multiple times.
 
-In this section, we will illustrate a simple example of how to use `r Biocpkg("iSEEfier")`. We will use the same pbmc3k data we worked with during this workshop.
+For that we can use the `r BiocStyle::Biocpkg("iSEEfier")` package, which streamlines the process of starting (or if you will, firing up) an `iSEE` instance with a small chunk of code, avoiding the tedious way of setting up every `iSEE` panel individually.
+
+In this section, we will illustrate a simple example of how to use `r BiocStyle::Biocpkg("iSEEfier")`. We will use the same allen data we worked with during this workshop.
 
 We start by loading the data:
 
