@@ -35,21 +35,20 @@ Now we will start by loading a demonstration dataset of single cell RNAseq datas
 
 ```{r process_data, eval=FALSE, echo=FALSE}
 # load data
-sce <- ReprocessedAllenData(assays="tophat_counts")
+sce <- scRNAseq::ReprocessedAllenData(assays="tophat_counts")
 # rename tophat_counts to counts
 assayNames(sce)[assayNames(sce) == "tophat_counts"] <- "counts"
 # log transform the counts
-sce <- logNormCounts(sce)
+sce <- scuttle::logNormCounts(sce)
 # add dimensionality reduction coordinates
-sce <- runPCA(sce)
-sce <- runTSNE(sce)
-sce <- runUMAP(sce)
+sce <- scater::runPCA(sce)
+sce <- scater::runTSNE(sce)
+sce <- scater::runUMAP(sce)
 saveRDS(sce,"sce_allen.RDS")
 ```
 
-```{r loadlib, echo=FALSE,eval=TRUE, message=FALSE,warning=FALSE}
-library("iSEE")
-library("shiny")
+```{r loadlib, message=FALSE,warning=FALSE}
+library("iSEEfierWorkshopSCBS2024")
 ```
 
 ```{r loaddata}
