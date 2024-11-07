@@ -1,52 +1,53 @@
-# BuildABiocWorkshop
+# Streamlining Omics Data Visualization with `iSEE` and `iSEEfier`
 
-This package is a template for building a Bioconductor workshop. The package
-includes Github actions to:
+This workshop adapted from the collection of material developed by the iSEE core dev team
 
-1. Set up bioconductor/bioconductor_docker:devel on Github resources
-2. Install package dependencies for your package (based on the `DESCRIPTION` file)
-3. Run `rcmdcheck::rcmdcheck`
-4. Build a pkgdown website and push it to github pages
-5. Build a docker image with the installed package and dependencies and deploy to [the Github Container Repository](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#pulling-container-images) at the name `ghcr.io/gihub_user/repo_name`, all lowercase. 
+Authors: Najla Abassi, Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), University Medical Center, Mainz, Germany
 
-## Responsibilities
+## Overview
 
-Package authors are primarily responsible for:
+### Description
 
-1. Creating a landing site of their choosing for their workshops (a website). This website should be listed in the `DESCRIPTION` file as the `URL`.
-2. Creating a docker image that will contain workshop materials and the installed packages necessary to run those materials. The name of the resulting docker image, including "tag" if desired, should be listed in a non-standard tag, `DockerImage:` in the `DESCRIPTION` file. 
+Effectively exploring and visualizing omics data is one crucial step for uncovering new biological insights. `r BiocStyle::Biocpkg("iSEE")`, a Bioconductor package/Shiny App, offers a wealth of powerful features to help you visualize your data at any stage of the data analysis pipeline.
 
-Both of those tasks can be accomplished using the Github actions included in this template package. The vignette accompanying this package describes how to accomplish both of these tasks.
+This workshop will cover some of the core functionalities of `iSEE`, as well as introducing `r BiocStyle::Biocpkg("iSEEfier")`, a Bioconductor package and `iSEE` extension, designed to simplify the setup of `iSEE` instances, making it easier to create customized visualization sessions. The participant will learn how to use `iSEE` and how to create tailored initial states with `iSEEfier` for diverse data exploration goals.
 
-## Details
+### Pre-requisites
 
-For detailed instructions, see the `How to build a workshop` article/vignette.
+-   Basic knowledge of R syntax
+-   Familiarity with the `SummarizedExperiment` class
+-   Familiarity with bulk or single-cell sequencing data
 
-## Results of successful deployment
+Relevant background reading:
 
-- A working docker image that contains the installed package and dependencies.
-- An up-to-date `pkgdown` website at https://YOURUSERNAME.github.io/YOURREPOSITORYNAME/
-- Docker image will be tagged with `latest`, `sha-XXXXXX` where `XXXXXX` is the hash of the current `master` commit, and `master`. 
+-   Rue-Albrecht K, Marini F, Soneson C and Lun ATL. iSEE: Interactive SummarizedExperiment Explorer [version 1; peer review: 3 approved]. F1000Research 2018, 7:741 (<https://doi.org/10.12688/f1000research.14966.1>)
+-   `iUSEiSEE` workshop: [materials](https://isee.github.io/iUSEiSEE/)
 
-## To use the resulting image:
+### Participation
 
-```sh
-docker run -e PASSWORD=<choose_a_password_for_rstudio> -p 8787:8787 YOURDOCKERIMAGENAME
-```
-Once running, navigate to http://localhost:8787/ and then login with `rstudio`:`yourchosenpassword`. 
+You are encouraged to ask questions throughout the workshop. You can also write questions during, and after the workshop using the ‘New issue’ button on the GitHub repository for this workshop (<https://github.com/NajlaAbassi/iSEEfierWorkshop2024/issues>).
 
-To try with **this** repository docker image:
+### *R* / *Bioconductor* packages used
 
-```sh
-docker run -e PASSWORD=abc -p 8787:8787 ghcr.io/bioconductor/buildabiocworkshop
-```
+-   `r BiocStyle::Biocpkg("iSEE")`
+-   `r BiocStyle::Biocpkg("iSEEfier")`
 
-*NOTE*: Running docker that uses the password in plain text like above exposes the password to others 
-in a multi-user system (like a shared workstation or compute node). In practice, consider using an environment 
-variable instead of plain text to pass along passwords and other secrets in docker command lines. 
+You can install both packages using the following command
 
+`r BiocManager::install(c("iSEE","iSEEfier"))`
 
-## Whatcha get
+### Time outline
 
-- https://bioconductor.github.io/BuildABiocWorkshop
-- A Docker image that you can run locally, in the cloud, or (usually) even as a singularity container on HPC systems. 
+| Activity                   | Time |
+|----------------------------|------|
+| Introduction to `iSEE`     | 15m  |
+| Introduction to `iSEEfier` | 15m  |
+| Questions                  | 10m  |
+
+### Workshop goals and objectives
+
+Through this workshop, you will...
+
+-   see how easy it is to run `iSEE`.
+-   obtain a quick overview of the available panels and the user interface.
+-   learn how to seamlessly customize the initial configuration of `iSEE` with `iSEEfier` for different visualization goals.
