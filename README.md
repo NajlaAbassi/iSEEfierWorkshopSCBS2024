@@ -1,6 +1,6 @@
-# Streamlining Omics Data Visualization with `iSEE` and `iSEEfier`
+# Streamlining Omics Data Visualization with `iSEE` and `iSEEfier` (Workshop)
 
-This workshop adapted from the collection of material developed by the iSEE core dev team
+This workshop was adapted from the collection of material developed by the iSEE core dev team
 
 Authors: Najla Abassi, Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), University Medical Center, Mainz, Germany
 
@@ -8,9 +8,9 @@ Authors: Najla Abassi, Institute of Medical Biostatistics, Epidemiology and Info
 
 ### Description
 
-Effectively exploring and visualizing omics data is one crucial step for uncovering new biological insights. `r BiocStyle::Biocpkg("iSEE")`, a Bioconductor package/Shiny App, offers a wealth of powerful features to help you visualize your data at any stage of the data analysis pipeline.
+Effectively exploring and visualizing omics data is one crucial step for uncovering new biological insights. [`iSEE`](https://www.bioconductor.org/packages/iSEE), a Bioconductor package/Shiny App, offers a wealth of powerful features to help you visualize your data at any stage of the data analysis pipeline.
 
-This workshop will cover some of the core functionalities of `iSEE`, as well as introducing `r BiocStyle::Biocpkg("iSEEfier")`, a Bioconductor package and `iSEE` extension, designed to simplify the setup of `iSEE` instances, making it easier to create customized visualization sessions. The participant will learn how to use `iSEE` and how to create tailored initial states with `iSEEfier` for diverse data exploration goals.
+This workshop will cover some of the core functionalities of `iSEE`, as well as introducing [`iSEEfier`](https://www.bioconductor.org/packages/iSEEfier), a Bioconductor package and `iSEE` extension, designed to simplify the setup of `iSEE` instances, making it easier to create customized visualization sessions. The participant will learn how to use `iSEE` and how to create tailored initial states with `iSEEfier` for diverse data exploration goals.
 
 ### Pre-requisites
 
@@ -29,12 +29,14 @@ You are encouraged to ask questions throughout the workshop. You can also write 
 
 ### *R* / *Bioconductor* packages used
 
--   `r BiocStyle::Biocpkg("iSEE")`
--   `r BiocStyle::Biocpkg("iSEEfier")`
+-   [`iSEE`](https://www.bioconductor.org/packages/iSEE)
+-   [`iSEEfier`](https://www.bioconductor.org/packages/iSEEfier)
 
 You can install both packages using the following command
 
-`r BiocManager::install(c("iSEE","iSEEfier"))`
+``` r 
+BiocManager::install(c("iSEE","iSEEfier"))
+```
 
 ### Time outline
 
