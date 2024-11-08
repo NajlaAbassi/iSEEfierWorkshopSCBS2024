@@ -1,19 +1,26 @@
 ---
-title: "iSEE_and_iSEEfier_Workshop"
+title: "iSEEfier Workshop SCBC2024"
 author: "Najla Abassi[^workshop_iSEEfier-1]^[najla.abassi@uni-mainz.de] <br>
   This workshop was adapted from the collection of material developed by the `iSEE` core development team"  
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{iSEE_and_iSEEfier_Workshop}
+  %\VignetteIndexEntry{workshop_iSEEfier}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-collapse = TRUE,
-comment = "#>"
+  echo = TRUE,
+  cache = FALSE,
+  collapse = TRUE,
+  comment = "#>",
+  crop = NA
 )
+```
+
+```{r, eval=!exists("SCREENSHOT"), include=FALSE}
+SCREENSHOT <- function(x, ...) knitr::include_graphics(x)
 ```
 
 [^workshop_iSEEfier-1]: Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), University Medical Center, Mainz, Germany
@@ -32,13 +39,12 @@ The `r BiocStyle::Biocpkg("iSEE")` package is a flexible, powerful and extendibl
 In this workshop we will use a demonstration dataset of single cell RNAseq from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216). The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")` Bioconductor package, and is stored in an object of class `r BiocStyle::Biocpkg("SingleCellExperiment")`, which is a class that inherits from the `SummarizedExperiment` class. It includes additional slots and methods like metadata related to individual cells and their associated dimensionality reductions. ![SingleCellExperiment (source: the package vignette; \<https://bioconductor.org/packages/SingleCellExperiment/\\\\\\\>).](SingleCellExperiment.png)
 We processed the data beforehand to save some time.
 
-
 ```{r loadlib, message=FALSE,warning=FALSE}
 library("iSEEfierWorkshopSCBS2024")
 ```
 
 ```{r loaddata}
-sce <- sce
+sce <- iSEEfierWorkshopSCBS2024::sce_allen
 sce
 ```
 
@@ -65,10 +71,13 @@ app <- iSEE::iSEE(sce)
 ```
 
 ```{r launchApp, message=FALSE, eval=FALSE}
-runApp(app,launch.browser = TRUE)
+shiny::runApp(app,launch.browser = TRUE)
 ```
 
-![vanilla-iSEE](img/iSEE_default.png)
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_default.png", delay = 10)
+```
+
 
 ### The built-in panel types
 
@@ -79,20 +88,33 @@ The reduced dimension plot can display any reduced dimension representation that
 Note that this slot is not defined for the base `SummarizedExperiment` class, in which case the user interface does not allow the inclusion of panels of this type.
 
 ```{r reddim, message=FALSE, echo = FALSE}
-app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot()))
+app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L)))
 ```
 
-![reduceddimensionplot-iSEE](img/isee-reduceddimensionplot.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_RedDimPlot.png", delay = 10)
+```
+
 
 #### `ColumnDataPlot`
 
 The column data plot can display one or two of the provided column annotations (from the `colData` slot). Depending on the class of the selected annotations, the panel shows either a scatter plot, a violin plot, or a Hinton diagram [@Hinton1991-hintondiagram; @Bremner1994-hintonplots].
 
 ```{r coldata, message=FALSE, echo = FALSE}
-app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot()))
+app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
 ```
 
-![columndataplot-iSEE](img/isee-columndataplot.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_ColDataPlot.png", delay = 10)
+```
 
 #### `ComplexHeatmapPlot`
 
@@ -102,7 +124,13 @@ The complex heatmap panel displays, for any assay, the observed values for a sub
 app <- iSEE::iSEE(sce, initial = list(ComplexHeatmapPlot(PanelWidth = 12L)))
 ```
 
-![complexheatmapplot-iSEE](img/isee-complexheatmapplot.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_Heatmap.png", delay = 10)
+```
 
 #### `FeatureAssayPlot`
 
@@ -112,7 +140,13 @@ The feature assay plot displays the observed values for one feature across the s
 app <- iSEE::iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L)))
 ```
 
-![featureassayplot-iSEE](img/isee-featureassayplot.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_FeatureAssayPlt.png", delay = 10)
+```
 
 #### `SampleAssayPlot`
 
@@ -122,7 +156,13 @@ Analogous to the [`r .fullName(FeatureAssayPlot())`](#featassayplot) above, the 
 app <- iSEE::iSEE(sce, initial = list(SampleAssayPlot(PanelWidth = 12L)))
 ```
 
-![sampleassayplot-iSEE](img/isee-sampleassayplot.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_SampleAssayPlt.png", delay = 10)
+```
 
 #### `RowDataTable` 
 
@@ -132,7 +172,13 @@ The row data table displays all information provided in the `rowData` slot of th
 app <- iSEE::iSEE(sce, initial = list(RowDataTable(PanelWidth = 12L)))
 ```
 
-![rowdatatable-iSEE](img/isee-rowdatatable.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_RowDataTable.png", delay = 10)
+```
 
 #### `ColumnDataTable`
 
@@ -142,7 +188,13 @@ Analogous to the [`r .fullName(RowDataTable())`](#rowdatatable) above, the colum
 app <- iSEE::iSEE(sce, initial = list(ColumnDataTable(PanelWidth = 12L)))
 ```
 
-![columndatatable-iSEE](img/isee-columndatatable.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_ColDataTable.png", delay = 10)
+```
 
 ### Collapsible boxes with display controls
 
@@ -151,10 +203,17 @@ app <- iSEE::iSEE(sce, initial = list(ColumnDataTable(PanelWidth = 12L)))
 Each plot panel type has a `Data parameters` collapsible box. This box has different content for each panel type, but in all cases it lets the user control the data that is displayed in the plot.
 
 ```{r datapram, message=FALSE, echo = FALSE}
-app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L,
+                                                     DataBoxOpen = TRUE)))
 ```
 
-![columndataplot-iSEE](img/isee-columndataplot-dataparameters.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_data_param.png", delay = 10)
+```
 
 
 #### Visual parameters
@@ -164,10 +223,17 @@ In contrast to the `Data parameters` collapsible box that lets users control *wh
 This collapsible box contains the controls to change the size, shape, opacity, and color of the points, to facet the plot by any available categorical annotation, to subsample points for increased speed of plot rendering, and to control how legends are displayed.
 
 ```{r vizparam, message=FALSE, echo=FALSE}
-app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L,
+                                                     VisualBoxOpen = TRUE)))
 ```
 
-![columndataplot-visualparameters-iSEE](img/isee-columndataplot-visualparameters.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_viz_param.png", delay = 10)
+```
 
 #### Selection parameters
 
@@ -176,10 +242,18 @@ The `Selection parameters` collapsible box provides controls to transfer selecti
 We demonstrate examples of point transmission in the separate vignette of [workshop recipes](recipes.html)
 
 ```{r selecparam, message=FALSE, echo = FALSE}
-app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L)))
+app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L,
+                                                           Type = "TSNE",
+                                                           SelectionBoxOpen = TRUE)))
 ```
 
-![reduceddimensionplot-selectionparameters-iSEE](img/isee-reduceddimensionplot-selectionparameters.png)
+```{r, message=FALSE, eval=FALSE}
+shiny::runApp(app,launch.browser = TRUE)
+```
+
+```{r, echo=FALSE, out.width='100%'}
+SCREENSHOT("img/iSEE_selec_param.png", delay = 10)
+```
 
 
 ## Introduction to `iSEEfier`
@@ -288,5 +362,5 @@ view_initial_tiles(initial = merged_config)
 ## Session info {.unnumbered}
 
 ```{r}
-sessioninfo::session_info()
+sessionInfo()
 ```
