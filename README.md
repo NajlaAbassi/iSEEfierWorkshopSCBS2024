@@ -6,6 +6,17 @@ Author: Najla Abassi, Institute of Medical Biostatistics, Epidemiology and Infor
 
 ## Overview
 
+### Get Started...
+
+You can follow along this workshop by installing this workshop package using the following command:
+
+``` r 
+library("remotes")
+remotes::install_github("NajlaAbassi/iSEEfierWorkshop2024",
+                dependencies = TRUE,
+                build_vignettes = TRUE)
+```
+
 ### Description
 
 Effectively exploring and visualizing omics data is one crucial step for uncovering new biological insights. [`iSEE`](https://www.bioconductor.org/packages/iSEE), a Bioconductor package/Shiny App, offers a wealth of powerful features to help you visualize your data at any stage of the data analysis pipeline.
@@ -22,6 +33,7 @@ Relevant background reading:
 
 -   Rue-Albrecht K, Marini F, Soneson C and Lun ATL. iSEE: Interactive SummarizedExperiment Explorer [version 1; peer review: 3 approved]. F1000Research 2018, 7:741 (https://doi.org/10.12688/f1000research.14966.1)
 -   `iUSEiSEE` workshop: [materials](https://isee.github.io/iUSEiSEE/)
+-   Other???
 
 ### Participation
 
@@ -48,13 +60,3 @@ Through this workshop, you will...
 -   obtain a quick overview of the available panels and the user interface.
 -   learn how to seamlessly customize the initial configuration of `iSEE` with `iSEEfier` for different visualization goals.
 
-### Get Started...
-
-You can follow along this workshop by installing this workshop package using the following command:
-
-``` r 
-library("remotes")
-remotes::install_github("NajlaAbassi/iSEEfierWorkshop2024",
-                dependencies = TRUE,
-                build_vignettes = TRUE)
-```
