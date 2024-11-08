@@ -11,6 +11,7 @@ Description: This is a Bioconductor Workshop package prapared for the Student Co
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Depends:
@@ -22,9 +23,7 @@ Suggests:
     knitr,
     rmarkdown,
     pkgdown,
-    BiocStyle,
-    sessioninfo,
-    webshot2
+    BiocStyle
 URL: https://najlaabassi.github.io/iSEEfierWorkshopSCBS2024/
 BugReports: https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new/choose
 VignetteBuilder: knitr
