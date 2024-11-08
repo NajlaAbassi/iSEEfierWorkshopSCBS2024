@@ -1,18 +1,18 @@
 library("scRNAseq")
 
 # load data
-sce <- ReprocessedAllenData(assays="tophat_counts")
+sce_allen <- ReprocessedAllenData(assays="tophat_counts")
 
 # rename tophat_counts to counts
-assayNames(sce)[assayNames(sce) == "tophat_counts"] <- "counts"
+assayNames(sce_allen)[assayNames(sce_allen) == "tophat_counts"] <- "counts"
 
 # log transform the counts
-sce <- scuttle::logNormCounts(sce)
+sce_allen <- scuttle::logNormCounts(sce_allen)
 
 # add dimensionality reduction coordinates
-sce <- scater::runPCA(sce)
-sce <- scater::runTSNE(sce)
-sce <- scater::runUMAP(sce)
+sce_allen <- scater::runPCA(sce_allen)
+sce_allen <- scater::runTSNE(sce_allen)
+sce_allen <- scater::runUMAP(sce_allen)
 
 # save object
-save(sce,file = "data/sce_allen.RData")
+save(sce_allen,file = "data/sce_allen.RData", compress = "xz")
