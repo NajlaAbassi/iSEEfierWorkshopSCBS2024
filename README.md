@@ -1,14 +1,10 @@
 # Streamlining Omics Data Visualization with `iSEE` and `iSEEfier` - Workshop
 
-This workshop was adapted from the collection of material developed by the `iSEE` core development team (Kevin Rue-Albrecht, Federico Marini, Charlotte Soneson, Aaron Lun)
-
-Author: Najla Abassi, Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), University Medical Center, Mainz, Germany
+Some materials in this workshop were adapted from resources created by the `iSEE` core development team (Kevin Rue-Albrecht, Federico Marini, Charlotte Soneson, Aaron Lun)
 
 ## Overview
 
-### Get Started...
-
-You can follow along this workshop by installing this workshop package using the following command:
+### How to install
 
 ``` r 
 library("remotes")
@@ -16,6 +12,14 @@ remotes::install_github("NajlaAbassi/iSEEfierWorkshop2024",
                 dependencies = TRUE,
                 build_vignettes = TRUE)
 ```
+
+### How to use this workshop
+
+-   Install the package
+-   Download/clone this repo
+-   Open the `iSEEfierWorkshop2024.Rproj` project file
+-   Navigate to the `vignettes` folder
+-   Open the `workshop_iSEEfier.Rmd` Rmarkdown file and execute its content live!
 
 ### Description
 
