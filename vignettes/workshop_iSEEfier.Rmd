@@ -298,9 +298,10 @@ In this section, we will illustrate a simple example of how to use `r BiocStyle:
 For example, we can be interested in visualizing the expression of *Bcl6*, *Arf5*, *Cxcr5* and *Grip1* genes all at once. We start by providing a couple of parameters:
 
 ```{r setup_iSEEinit}
-# define the list of genes
+## Define the list of genes
 feature_list_1 <- c("Bcl6", "Arf5", "Cxcr5","Grip1")
-# define the cluster/cell type 
+
+## Define the cluster/cell type 
 cluster_1 <- "Primary.Type"
 ```
 
@@ -308,7 +309,7 @@ It is also possible to load the feature list as a `data.frame`, if our genes of 
 Now we can pass these parameters into `iSEEinit()` to create a customized initial configuration:
 
 ```{r iSEEinit}
-# create an initial state with iSEEinit
+## Create an initial state with iSEEinit
 initial_1 <- iSEEinit(sce,
                       features = feature_list_1,
                       clusters = cluster_1,
@@ -339,9 +340,10 @@ For this, we used the argument `add_markdown_panel = TRUE`. It will display a `M
 In many cases, we are interested in determining the identity of our cell clusters, or further subset our cells types. That's where `iSEEmarker()` comes in handy. Similar to `iSEEinit()`, we need a couple of parameters to be set:
 
 ```{r setup_iSEEmarker}
-# define the cluster/cell type 
+## Define the cluster/cell type 
 cluster_1 <- "Primary.Type"
-# define the groups/conditions
+
+## Define the groups/conditions
 group_1 <- "driver_1_s"
 ```
 
@@ -376,17 +378,20 @@ SCREENSHOT("img/iSEEmarker.png", delay = 10)
 At times, it can be useful to explore particular sets of features and their associated genes. This is where `iSEEnrich` proves to be especially valuable. We will first set up the necessary arguments:
 
 ```{r set_iSEEnrich}
-# set term
+## Set which terms to use
 GO_collection <- "GO"
-# set organism
+
+## Set the organism via the orgDb package name
 Mm_organism <- "org.Mm.eg.db"
-# set gene id
+
+## Set the gene identifier type
 gene_id <- "SYMBOL"
-# define cluster
+
+## Define the cluster info
 cluster_1 <- "Primary.Type"
-# define group
+## Define the group info
 group_1 <- "driver_1_s"
-# define plot type
+## Define the plot type for the reduced dimension
 reddim_type <- "TSNE"
 ```
 
@@ -425,10 +430,14 @@ SCREENSHOT("img/iSEEnrich.png", delay = 10)
 
 We can check the initial's content, or how the included panels are linked between each other without running the app with `view_initial_tiles()` and `view_initial_network()`:
 
-```{r, eval=FALSE}
-# display a graphical representation of the initial configuration, where the panels are identified by their corresponding colors
+```{r fig.width=7, fig.height=5}
+## Display a graphical representation of the initial configuration, where the panels are identified by their corresponding colors
 view_initial_tiles(initial = initial_1)
-# display a network visualization for the panels
+```
+
+
+```{r fig.width=8, fig.height=8}
+## Display a network visualization for the panels
 view_initial_network(initial_1, plot_format = "igraph")
 ```
 
