@@ -16,6 +16,7 @@ vignette: >
   %\VignetteIndexEntry{workshop_iSEEfier}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
+bibliography: iSEEfier_workshop.bib
 ---
 
 ```{r, include = FALSE}
