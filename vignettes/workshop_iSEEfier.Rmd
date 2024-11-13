@@ -109,7 +109,7 @@ app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_RedDimPlot.png", delay = 10)
 ```
@@ -127,7 +127,7 @@ app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_ColDataPlot.png", delay = 10)
 ```
@@ -144,7 +144,7 @@ app <- iSEE::iSEE(sce, initial = list(ComplexHeatmapPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_Heatmap.png", delay = 10)
 ```
@@ -161,7 +161,7 @@ app <- iSEE::iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_FeatureAssayPlt.png", delay = 10)
 ```
@@ -178,7 +178,7 @@ app <- iSEE::iSEE(sce, initial = list(SampleAssayPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_SampleAssayPlt.png", delay = 10)
 ```
@@ -195,7 +195,7 @@ app <- iSEE::iSEE(sce, initial = list(RowDataTable(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_RowDataTable.png", delay = 10)
 ```
@@ -212,7 +212,7 @@ app <- iSEE::iSEE(sce, initial = list(ColumnDataTable(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_ColDataTable.png", delay = 10)
 ```
@@ -232,7 +232,7 @@ app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L,
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_data_param.png", delay = 10)
 ```
@@ -253,7 +253,7 @@ app <- iSEE::iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L,
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_viz_param.png", delay = 10)
 ```
@@ -274,7 +274,7 @@ app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L,
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_selec_param.png", delay = 10)
 ```
@@ -284,7 +284,6 @@ SCREENSHOT("img/iSEE_selec_param.png", delay = 10)
 Now we have seen how powerful of a tool `iSEE` can be. As we previously learned, many tasks can be accomplished simply by running the command:
 
 ```{r, eval=FALSE}
-# don't run
 iSEE(sce)
 ```
 
