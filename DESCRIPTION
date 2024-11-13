@@ -7,7 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "abassi.nejla96@gmail.com",
            comment = c(ORCID = "0000-0001-8357-0938"))
-Description: This is a Bioconductor Workshop package prapared for the Student Conference for Biological Sciences 2024 held in Tirana, Albania.
+Description: This is a Bioconductor Workshop package prapared for the Student 
+    Conference for Biological Sciences 2024 held in Tirana, Albania.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
