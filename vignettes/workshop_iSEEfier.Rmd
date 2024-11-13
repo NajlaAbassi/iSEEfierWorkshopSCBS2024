@@ -451,16 +451,19 @@ It is also possible to combine multiple initials into one:
 
 ```{r, eval=FALSE}
 merged_config <- glue_initials(initial_1, initial_2)
-# check out the content of merged_config
+## Check out the content of merged_config
 view_initial_tiles(initial = merged_config)
 ```
 
 `?iSEEfier` is always your friend whenever you need further documentation on the package/a certain function and how to use it.
 
-Feel free to explore previous `iSEE` demos and `workshops`, as well as the `iSEEfier` vignette, for a deeper dive into using these tools. They’ll help you make the most of them :)
+Feel free to explore previous `iSEE` demos and `workshops`, as well as the `iSEEfier` vignette, for a deeper dive into using these tools. They’ll help you make the most of them :)  
+If you look for a place to start and have a full one-day workshop, please refer to [`https://isee.github.io/iUSEiSEE/`](https://isee.github.io/iUSEiSEE/).
 
 ## Session info {.unnumbered}
 
 ```{r}
 sessionInfo()
 ```
+
+## References {.unnumbered}
