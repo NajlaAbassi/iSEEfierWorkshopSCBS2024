@@ -1,6 +1,5 @@
 ---
-title: >
-  iSEEfier Workshop SCBC2024
+title: "iSEEfier Workshop SCBC2024"
 author:
 - name: Najla Abassi
   affiliation:
@@ -13,7 +12,7 @@ editor_options:
   chunk_output_type: console
 date: "`r BiocStyle::doc_date()`"
 vignette: >
-  %\VignetteIndexEntry{workshop_iSEEfier}
+  %\VignetteIndexEntry{iSEEfier Workshop SCBC2024}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 bibliography: iSEEfier_workshop.bib
