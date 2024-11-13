@@ -65,16 +65,16 @@ sce
 Looking at the object displayed above, we can tell that it contains:
 
 -   Two `assays`. The first one called `counts`, and corresponds to a matrix measuring 20,816 genes in 379 cells. And The second assay is `logcounts`, which is the log transformed counts.
--   Twenty three columns of cell metadata (`colData`).
--   No gene metadata (`rowData`).
+-   Twenty-three columns of cell metadata (`colData`).
+-   No gene metadata (`rowData`), but only the basic information in the `rownames`.
 -   Three reduced dimensions : `PCA`, `TSNE`, and `UMAP`.
 
 Also of note:
 
 -   Gene symbols are in use for the row names.
--   Arbitrary cell names are in use for column names.
+-   Arbitrary cell names are in use for column names (related to the SRA run information).
 -   Some object-level metadata is present.
--   An alternative experiment called `ERCC` is present (we will not use it).
+-   An alternative experiment called `ERCC` is present (we will not use it) - this is related to the [ERCC Spike-in mix](https://www.thermofisher.com/order/catalog/product/de/en/4456740).
 
 ### The default `iSEE` app
 
