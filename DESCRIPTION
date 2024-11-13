@@ -26,7 +26,7 @@ Suggests:
     pkgdown,
     BiocStyle
 URL: https://najlaabassi.github.io/iSEEfierWorkshopSCBS2024/
-BugReports: https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new/choose
+BugReports: https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new
 VignetteBuilder: knitr
 DockerImage: ghcr.io/najlaabassi/iSEEfierWorkshopSCBS2024:latest
 biocViews: 
