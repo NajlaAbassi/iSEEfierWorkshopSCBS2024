@@ -29,3 +29,7 @@ URL: https://najlaabassi.github.io/iSEEfierWorkshopSCBS2024/
 BugReports: https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new/choose
 VignetteBuilder: knitr
 DockerImage: ghcr.io/najlaabassi/iSEEfierWorkshopSCBS2024:latest
+biocViews: 
+    CellBasedAssays, Clustering, DimensionReduction, FeatureExtraction, GUI, 
+    GeneExpression, ImmunoOncology, ShinyApps, SingleCell, Software, 
+    Transcription, Transcriptomics, Visualization
