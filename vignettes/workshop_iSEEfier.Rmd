@@ -45,7 +45,8 @@ The `r BiocStyle::Biocpkg("iSEE")` package is a flexible, powerful and extendibl
 
 <img src="img/SummarizedExperiment.png" alt="SummarizedExperiment (source: the package vignette; https://bioconductor.org/packages/SummarizedExperiment/)" width="100%">
 
-In this workshop we will use a demonstration dataset of single cell RNAseq from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216). The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")` Bioconductor package, and is stored in an object of class `r BiocStyle::Biocpkg("SingleCellExperiment")`, which is a class that inherits from the `SummarizedExperiment` class. It includes additional slots and methods like metadata related to individual cells and their associated dimensionality reductions.
+In this workshop we will use a demonstration dataset of single cell RNAseq from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216)[@Tasic2016-ga].  
+The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")` Bioconductor package, and is stored in an object of class `r BiocStyle::Biocpkg("SingleCellExperiment")`, which is a class that inherits from the `SummarizedExperiment` class. It includes additional slots and methods like metadata related to individual cells and their associated dimensionality reductions.
 
 <img src="img/SingleCellExperiment.png" alt="SingleCellExperiment (source: the package vignette; \<https://bioconductor.org/packages/SingleCellExperiment/)" width="100%">
 
