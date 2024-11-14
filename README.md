@@ -37,7 +37,7 @@ Relevant background reading:
 
 -   Rue-Albrecht K, Marini F, Soneson C and Lun ATL. iSEE: Interactive SummarizedExperiment Explorer [version 1; peer review: 3 approved]. F1000Research 2018, 7:741 (https://doi.org/10.12688/f1000research.14966.1)
 -   `iUSEiSEE` workshop: [materials](https://isee.github.io/iUSEiSEE/)
--   Other???
+-   Huber, W., Carey, V., Gentleman, R. et al. Orchestrating high-throughput genomic analysis with Bioconductor. Nat Methods 12, 115–121 (2015). (https://doi.org/10.1038/nmeth.3252)
 
 ### Participation
 
