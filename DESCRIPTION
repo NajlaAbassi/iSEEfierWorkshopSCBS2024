@@ -24,7 +24,8 @@ Suggests:
     knitr,
     rmarkdown,
     pkgdown,
-    BiocStyle
+    BiocStyle,
+    org.Mm.eg.db
 URL: https://najlaabassi.github.io/iSEEfierWorkshopSCBS2024/
 BugReports: https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new
 VignetteBuilder: knitr
