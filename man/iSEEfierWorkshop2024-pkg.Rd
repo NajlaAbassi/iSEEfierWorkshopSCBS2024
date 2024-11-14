@@ -13,7 +13,7 @@ This is a Bioconductor Workshop package prapared for the Student Conference for 
 Useful links:
 \itemize{
   \item \url{https://najlaabassi.github.io/iSEEfierWorkshopSCBS2024/}
-  \item Report bugs at \url{https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new/choose}
+  \item Report bugs at \url{https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new}
 }
 
 }

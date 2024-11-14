@@ -1,6 +1,5 @@
 ---
-title: >
-  iSEEfier Workshop SCBC2024
+title: "iSEEfier Workshop SCBC2024"
 author:
 - name: Najla Abassi
   affiliation:
@@ -13,9 +12,10 @@ editor_options:
   chunk_output_type: console
 date: "`r BiocStyle::doc_date()`"
 vignette: >
-  %\VignetteIndexEntry{workshop_iSEEfier}
+  %\VignetteIndexEntry{iSEEfier Workshop SCBC2024}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
+bibliography: iSEEfier_workshop.bib
 ---
 
 ```{r, include = FALSE}
@@ -45,7 +45,8 @@ The `r BiocStyle::Biocpkg("iSEE")` package is a flexible, powerful and extendibl
 
 <img src="img/SummarizedExperiment.png" alt="SummarizedExperiment (source: the package vignette; https://bioconductor.org/packages/SummarizedExperiment/)" width="100%">
 
-In this workshop we will use a demonstration dataset of single cell RNAseq from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216). The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")` Bioconductor package, and is stored in an object of class `r BiocStyle::Biocpkg("SingleCellExperiment")`, which is a class that inherits from the `SummarizedExperiment` class. It includes additional slots and methods like metadata related to individual cells and their associated dimensionality reductions.
+In this workshop we will use a demonstration dataset of single cell RNAseq from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216)[@Tasic2016-ga].  
+The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")` Bioconductor package, and is stored in an object of class `r BiocStyle::Biocpkg("SingleCellExperiment")`, which is a class that inherits from the `SummarizedExperiment` class. It includes additional slots and methods like metadata related to individual cells and their associated dimensionality reductions.
 
 <img src="img/SingleCellExperiment.png" alt="SingleCellExperiment (source: the package vignette; \<https://bioconductor.org/packages/SingleCellExperiment/)" width="100%">
 
@@ -64,16 +65,16 @@ sce
 Looking at the object displayed above, we can tell that it contains:
 
 -   Two `assays`. The first one called `counts`, and corresponds to a matrix measuring 20,816 genes in 379 cells. And The second assay is `logcounts`, which is the log transformed counts.
--   Twenty three columns of cell metadata (`colData`).
--   No gene metadata (`rowData`).
+-   Twenty-three columns of cell metadata (`colData`).
+-   No gene metadata (`rowData`), but only the basic information in the `rownames`.
 -   Three reduced dimensions : `PCA`, `TSNE`, and `UMAP`.
 
 Also of note:
 
 -   Gene symbols are in use for the row names.
--   Arbitrary cell names are in use for column names.
+-   Arbitrary cell names are in use for column names (related to the SRA run information).
 -   Some object-level metadata is present.
--   An alternative experiment called `ERCC` is present (we will not use it).
+-   An alternative experiment called `ERCC` is present (we will not use it) - this is related to the [ERCC Spike-in mix](https://www.thermofisher.com/order/catalog/product/de/en/4456740).
 
 ### The default `iSEE` app
 
@@ -108,7 +109,7 @@ app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_RedDimPlot.png", delay = 10)
 ```
@@ -126,7 +127,7 @@ app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_ColDataPlot.png", delay = 10)
 ```
@@ -143,7 +144,7 @@ app <- iSEE::iSEE(sce, initial = list(ComplexHeatmapPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_Heatmap.png", delay = 10)
 ```
@@ -160,7 +161,7 @@ app <- iSEE::iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_FeatureAssayPlt.png", delay = 10)
 ```
@@ -177,7 +178,7 @@ app <- iSEE::iSEE(sce, initial = list(SampleAssayPlot(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_SampleAssayPlt.png", delay = 10)
 ```
@@ -194,7 +195,7 @@ app <- iSEE::iSEE(sce, initial = list(RowDataTable(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_RowDataTable.png", delay = 10)
 ```
@@ -211,7 +212,7 @@ app <- iSEE::iSEE(sce, initial = list(ColumnDataTable(PanelWidth = 12L)))
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_ColDataTable.png", delay = 10)
 ```
@@ -231,7 +232,7 @@ app <- iSEE::iSEE(sce, initial = list(ColumnDataPlot(PanelWidth = 12L,
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_data_param.png", delay = 10)
 ```
@@ -252,7 +253,7 @@ app <- iSEE::iSEE(sce, initial = list(FeatureAssayPlot(PanelWidth = 12L,
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_viz_param.png", delay = 10)
 ```
@@ -273,7 +274,7 @@ app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L,
 shiny::runApp(app,launch.browser = TRUE)
 ```
 
-```{r, echo=FALSE, out.width='100%'}
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
 # don't run
 SCREENSHOT("img/iSEE_selec_param.png", delay = 10)
 ```
@@ -283,7 +284,6 @@ SCREENSHOT("img/iSEE_selec_param.png", delay = 10)
 Now we have seen how powerful of a tool `iSEE` can be. As we previously learned, many tasks can be accomplished simply by running the command:
 
 ```{r, eval=FALSE}
-# don't run
 iSEE(sce)
 ```
 
@@ -298,9 +298,10 @@ In this section, we will illustrate a simple example of how to use `r BiocStyle:
 For example, we can be interested in visualizing the expression of *Bcl6*, *Arf5*, *Cxcr5* and *Grip1* genes all at once. We start by providing a couple of parameters:
 
 ```{r setup_iSEEinit}
-# define the list of genes
+## Define the list of genes
 feature_list_1 <- c("Bcl6", "Arf5", "Cxcr5","Grip1")
-# define the cluster/cell type 
+
+## Define the cluster/cell type 
 cluster_1 <- "Primary.Type"
 ```
 
@@ -308,7 +309,7 @@ It is also possible to load the feature list as a `data.frame`, if our genes of 
 Now we can pass these parameters into `iSEEinit()` to create a customized initial configuration:
 
 ```{r iSEEinit}
-# create an initial state with iSEEinit
+## Create an initial state with iSEEinit
 initial_1 <- iSEEinit(sce,
                       features = feature_list_1,
                       clusters = cluster_1,
@@ -339,9 +340,10 @@ For this, we used the argument `add_markdown_panel = TRUE`. It will display a `M
 In many cases, we are interested in determining the identity of our cell clusters, or further subset our cells types. That's where `iSEEmarker()` comes in handy. Similar to `iSEEinit()`, we need a couple of parameters to be set:
 
 ```{r setup_iSEEmarker}
-# define the cluster/cell type 
+## Define the cluster/cell type 
 cluster_1 <- "Primary.Type"
-# define the groups/conditions
+
+## Define the groups/conditions
 group_1 <- "driver_1_s"
 ```
 
@@ -376,17 +378,20 @@ SCREENSHOT("img/iSEEmarker.png", delay = 10)
 At times, it can be useful to explore particular sets of features and their associated genes. This is where `iSEEnrich` proves to be especially valuable. We will first set up the necessary arguments:
 
 ```{r set_iSEEnrich}
-# set term
+## Set which terms to use
 GO_collection <- "GO"
-# set organism
+
+## Set the organism via the orgDb package name
 Mm_organism <- "org.Mm.eg.db"
-# set gene id
+
+## Set the gene identifier type
 gene_id <- "SYMBOL"
-# define cluster
+
+## Define the cluster info
 cluster_1 <- "Primary.Type"
-# define group
+## Define the group info
 group_1 <- "driver_1_s"
-# define plot type
+## Define the plot type for the reduced dimension
 reddim_type <- "TSNE"
 ```
 
@@ -425,10 +430,14 @@ SCREENSHOT("img/iSEEnrich.png", delay = 10)
 
 We can check the initial's content, or how the included panels are linked between each other without running the app with `view_initial_tiles()` and `view_initial_network()`:
 
-```{r, eval=FALSE}
-# display a graphical representation of the initial configuration, where the panels are identified by their corresponding colors
+```{r fig.width=7, fig.height=5}
+## Display a graphical representation of the initial configuration, where the panels are identified by their corresponding colors
 view_initial_tiles(initial = initial_1)
-# display a network visualization for the panels
+```
+
+
+```{r fig.width=8, fig.height=8}
+## Display a network visualization for the panels
 view_initial_network(initial_1, plot_format = "igraph")
 ```
 
@@ -442,16 +451,19 @@ It is also possible to combine multiple initials into one:
 
 ```{r, eval=FALSE}
 merged_config <- glue_initials(initial_1, initial_2)
-# check out the content of merged_config
+## Check out the content of merged_config
 view_initial_tiles(initial = merged_config)
 ```
 
 `?iSEEfier` is always your friend whenever you need further documentation on the package/a certain function and how to use it.
 
-Feel free to explore previous `iSEE` demos and `workshops`, as well as the `iSEEfier` vignette, for a deeper dive into using these tools. They’ll help you make the most of them :)
+Feel free to explore previous `iSEE` demos and `workshops`, as well as the `iSEEfier` vignette, for a deeper dive into using these tools. They’ll help you make the most of them :)  
+If you look for a place to start and have a full one-day workshop, please refer to [`https://isee.github.io/iUSEiSEE/`](https://isee.github.io/iUSEiSEE/).
 
 ## Session info {.unnumbered}
 
 ```{r}
 sessionInfo()
 ```
+
+## References {.unnumbered}

@@ -7,7 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "abassi.nejla96@gmail.com",
            comment = c(ORCID = "0000-0001-8357-0938"))
-Description: This is a Bioconductor Workshop package prapared for the Student Conference for Biological Sciences 2024 held in Tirana, Albania.
+Description: This is a Bioconductor Workshop package prapared for the Student 
+    Conference for Biological Sciences 2024 held in Tirana, Albania.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -23,8 +24,13 @@ Suggests:
     knitr,
     rmarkdown,
     pkgdown,
-    BiocStyle
+    BiocStyle,
+    org.Mm.eg.db
 URL: https://najlaabassi.github.io/iSEEfierWorkshopSCBS2024/
-BugReports: https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new/choose
+BugReports: https://github.com/najlaabassi/iSEEfierWorkshopSCBS2024/issues/new
 VignetteBuilder: knitr
 DockerImage: ghcr.io/najlaabassi/iSEEfierWorkshopSCBS2024:latest
+biocViews: 
+    CellBasedAssays, Clustering, DimensionReduction, FeatureExtraction, GUI, 
+    GeneExpression, ImmunoOncology, ShinyApps, SingleCell, Software, 
+    Transcription, Transcriptomics, Visualization
