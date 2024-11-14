@@ -5,15 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iSEEfier Workshop SCBC2024
- • iSEEfierWorkshopSCBS2024</title>
+<title>iSEEfier Workshop SCBC2024 • iSEEfierWorkshopSCBS2024</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="iSEEfier Workshop SCBC2024
-">
+<script src="../pkgdown.js"></script><meta property="og:title" content="iSEEfier Workshop SCBC2024">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -51,8 +49,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/workshop_iSEEfier.html">iSEEfier Workshop SCBC2024
-</a>
+      <a href="../articles/workshop_iSEEfier.html">iSEEfier Workshop SCBC2024</a>
     </li>
   </ul>
 </li>
@@ -77,8 +74,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip></h1>
-<p>iSEEfier Workshop SCBC2024</p>
+      <h1 data-toc-skip>iSEEfier Workshop SCBC2024</h1>
                         <h4 data-toc-skip class="author">Najla
 Abassi</h4>
             <address class="author_afil">
@@ -121,8 +117,8 @@ metadata, and feature metadata.</p>
 <p><img src="img%2FSummarizedExperiment.png" alt="SummarizedExperiment (source: the package vignette; https://bioconductor.org/packages/SummarizedExperiment/)" width="100%"></p>
 <p>In this workshop we will use a demonstration dataset of single cell
 RNAseq from Tasic et al. (2016) “Adult mouse cortical cell taxonomy
-revealed by single cell transcriptomics” <a href="https://doi.org/10.1038/nn.4216" class="external-link">doi:10.1038/nn.4216</a>. The data
-is made available via the <em><a href="https://bioconductor.org/packages/3.20/scRNAseq" class="external-link">scRNAseq</a></em>
+revealed by single cell transcriptomics” <a href="https://doi.org/10.1038/nn.4216" class="external-link">doi:10.1038/nn.4216</a><span class="citation">(Tasic et al. 2016)</span>.<br>
+The data is made available via the <em><a href="https://bioconductor.org/packages/3.20/scRNAseq" class="external-link">scRNAseq</a></em>
 Bioconductor package, and is stored in an object of class <em><a href="https://bioconductor.org/packages/3.20/SingleCellExperiment" class="external-link">SingleCellExperiment</a></em>,
 which is a class that inherits from the
 <code>SummarizedExperiment</code> class. It includes additional slots
@@ -153,18 +149,21 @@ contains:</p>
 and corresponds to a matrix measuring 20,816 genes in 379 cells. And The
 second assay is <code>logcounts</code>, which is the log transformed
 counts.</li>
-<li>Twenty three columns of cell metadata (<code>colData</code>).</li>
-<li>No gene metadata (<code>rowData</code>).</li>
+<li>Twenty-three columns of cell metadata (<code>colData</code>).</li>
+<li>No gene metadata (<code>rowData</code>), but only the basic
+information in the <code>rownames</code>.</li>
 <li>Three reduced dimensions : <code>PCA</code>, <code>TSNE</code>, and
 <code>UMAP</code>.</li>
 </ul>
 <p>Also of note:</p>
 <ul>
 <li>Gene symbols are in use for the row names.</li>
-<li>Arbitrary cell names are in use for column names.</li>
+<li>Arbitrary cell names are in use for column names (related to the SRA
+run information).</li>
 <li>Some object-level metadata is present.</li>
 <li>An alternative experiment called <code>ERCC</code> is present (we
-will not use it).</li>
+will not use it) - this is related to the <a href="https://www.thermofisher.com/order/catalog/product/de/en/4456740" class="external-link">ERCC
+Spike-in mix</a>.</li>
 </ul>
 </div>
 <div class="section level4">
@@ -197,7 +196,7 @@ the <code>SingleCellExperiment</code> object.</p>
 interface does not allow the inclusion of panels of this type.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_RedDimPlot.png" width="100%"></p>
+<p><img src="img%2FiSEE_RedDimPlot.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level5">
 <h5 id="columndataplot">
@@ -206,11 +205,11 @@ interface does not allow the inclusion of panels of this type.</p>
 <p>The column data plot can display one or two of the provided column
 annotations (from the <code>colData</code> slot). Depending on the class
 of the selected annotations, the panel shows either a scatter plot, a
-violin plot, or a Hinton diagram <span class="citation">[@Hinton1991-hintondiagram;
-@Bremner1994-hintonplots]</span>.</p>
+violin plot, or a Hinton diagram <span class="citation">(Hinton and
+Shallice 1991; Bremner, Gotts, and Denham 1994)</span>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_ColDataPlot.png" width="100%"></p>
+<p><img src="img%2FiSEE_ColDataPlot.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level5">
 <h5 id="complexheatmapplot">
@@ -220,7 +219,7 @@ violin plot, or a Hinton diagram <span class="citation">[@Hinton1991-hintondiagr
 values for a subset of the features across the samples.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_Heatmap.png" width="100%"></p>
+<p><img src="img%2FiSEE_Heatmap.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level5">
 <h5 id="featureassayplot">
@@ -231,7 +230,7 @@ across the samples. It is also possible to plot the observed values for
 two features, in a scatter plot.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_FeatureAssayPlt.png" width="100%"></p>
+<p><img src="img%2FiSEE_FeatureAssayPlt.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level5">
 <h5 id="sampleassayplot">
@@ -243,7 +242,7 @@ for one of the samples. It is also possible to plot the observed values
 for two samples, in a scatter plot.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_SampleAssayPlt.png" width="100%"></p>
+<p><img src="img%2FiSEE_SampleAssayPlt.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level5">
 <h5 id="rowdatatable">
@@ -254,7 +253,7 @@ for two samples, in a scatter plot.</p>
 object, leveraging the interactivity provided by the <em><a href="https://CRAN.R-project.org/package=DT" class="external-link">DT</a></em> package.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_RowDataTable.png" width="100%"></p>
+<p><img src="img%2FiSEE_RowDataTable.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level5">
 <h5 id="columndatatable">
@@ -266,7 +265,7 @@ the column data table displays all information provided in the
 object.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_ColDataTable.png" width="100%"></p>
+<p><img src="img%2FiSEE_ColDataTable.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div class="section level4">
@@ -281,7 +280,7 @@ cases it lets the user control the data that is displayed in the
 plot.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_data_param.png" width="100%"></p>
+<p><img src="img%2FiSEE_data_param.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level5">
 <h5 id="visual-parameters">Visual parameters<a class="anchor" aria-label="anchor" href="#visual-parameters"></a>
@@ -296,7 +295,7 @@ categorical annotation, to subsample points for increased speed of plot
 rendering, and to control how legends are displayed.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_viz_param.png" width="100%"></p>
+<p><img src="img%2FiSEE_viz_param.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level5">
 <h5 id="selection-parameters">Selection parameters<a class="anchor" aria-label="anchor" href="#selection-parameters"></a>
@@ -308,7 +307,7 @@ panels.</p>
 vignette of <a href="recipes.html">workshop recipes</a></p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="va">app</span>,launch.browser <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="img%2FiSEE_selec_param.png" width="100%"></p>
+<p><img src="img%2FiSEE_selec_param.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 </div>
@@ -319,8 +318,7 @@ vignette of <a href="recipes.html">workshop recipes</a></p>
 we previously learned, many tasks can be accomplished simply by running
 the command:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># don't run</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/iSEE/man/iSEE.html" class="external-link">iSEE</a></span><span class="op">(</span><span class="va">sce</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/iSEE/man/iSEE.html" class="external-link">iSEE</a></span><span class="op">(</span><span class="va">sce</span><span class="op">)</span></span></code></pre></div>
 <p>However, customizing our visualization session can be cumbersome, as
 it may require adding or removing different panels based on our needs.
 This process often includes multiple steps, such as selecting a gene of
@@ -341,16 +339,17 @@ We will use the same allen data we worked with during this workshop.</p>
 <em>Bcl6</em>, <em>Arf5</em>, <em>Cxcr5</em> and <em>Grip1</em> genes
 all at once. We start by providing a couple of parameters:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># define the list of genes</span></span>
+<code class="sourceCode R"><span><span class="co">## Define the list of genes</span></span>
 <span><span class="va">feature_list_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Bcl6"</span>, <span class="st">"Arf5"</span>, <span class="st">"Cxcr5"</span>,<span class="st">"Grip1"</span><span class="op">)</span></span>
-<span><span class="co"># define the cluster/cell type </span></span>
+<span></span>
+<span><span class="co">## Define the cluster/cell type </span></span>
 <span><span class="va">cluster_1</span> <span class="op">&lt;-</span> <span class="st">"Primary.Type"</span></span></code></pre></div>
 <p>It is also possible to load the feature list as a
 <code>data.frame</code>, if our genes of interest already existed in a
 table. Now we can pass these parameters into <code><a href="https://rdrr.io/pkg/iSEEfier/man/iSEEinit.html" class="external-link">iSEEinit()</a></code> to
 create a customized initial configuration:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># create an initial state with iSEEinit</span></span>
+<code class="sourceCode R"><span><span class="co">## Create an initial state with iSEEinit</span></span>
 <span><span class="va">initial_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/iSEEinit.html" class="external-link">iSEEinit</a></span><span class="op">(</span><span class="va">sce</span>,</span>
 <span>                      features <span class="op">=</span> <span class="va">feature_list_1</span>,</span>
 <span>                      clusters <span class="op">=</span> <span class="va">cluster_1</span>,</span>
@@ -378,9 +377,10 @@ cell clusters, or further subset our cells types. That’s where
 <code><a href="https://rdrr.io/pkg/iSEEfier/man/iSEEmarker.html" class="external-link">iSEEmarker()</a></code> comes in handy. Similar to
 <code><a href="https://rdrr.io/pkg/iSEEfier/man/iSEEinit.html" class="external-link">iSEEinit()</a></code>, we need a couple of parameters to be set:</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># define the cluster/cell type </span></span>
+<code class="sourceCode R"><span><span class="co">## Define the cluster/cell type </span></span>
 <span><span class="va">cluster_1</span> <span class="op">&lt;-</span> <span class="st">"Primary.Type"</span></span>
-<span><span class="co"># define the groups/conditions</span></span>
+<span></span>
+<span><span class="co">## Define the groups/conditions</span></span>
 <span><span class="va">group_1</span> <span class="op">&lt;-</span> <span class="st">"driver_1_s"</span></span></code></pre></div>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">initial_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/iSEEmarker.html" class="external-link">iSEEmarker</a></span><span class="op">(</span></span>
@@ -411,17 +411,20 @@ their associated genes. This is where <code>iSEEnrich</code> proves to
 be especially valuable. We will first set up the necessary
 arguments:</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># set term</span></span>
+<code class="sourceCode R"><span><span class="co">## Set which terms to use</span></span>
 <span><span class="va">GO_collection</span> <span class="op">&lt;-</span> <span class="st">"GO"</span></span>
-<span><span class="co"># set organism</span></span>
+<span></span>
+<span><span class="co">## Set the organism via the orgDb package name</span></span>
 <span><span class="va">Mm_organism</span> <span class="op">&lt;-</span> <span class="st">"org.Mm.eg.db"</span></span>
-<span><span class="co"># set gene id</span></span>
+<span></span>
+<span><span class="co">## Set the gene identifier type</span></span>
 <span><span class="va">gene_id</span> <span class="op">&lt;-</span> <span class="st">"SYMBOL"</span></span>
-<span><span class="co"># define cluster</span></span>
+<span></span>
+<span><span class="co">## Define the cluster info</span></span>
 <span><span class="va">cluster_1</span> <span class="op">&lt;-</span> <span class="st">"Primary.Type"</span></span>
-<span><span class="co"># define group</span></span>
+<span><span class="co">## Define the group info</span></span>
 <span><span class="va">group_1</span> <span class="op">&lt;-</span> <span class="st">"driver_1_s"</span></span>
-<span><span class="co"># define plot type</span></span>
+<span><span class="co">## Define the plot type for the reduced dimension</span></span>
 <span><span class="va">reddim_type</span> <span class="op">&lt;-</span> <span class="st">"TSNE"</span></span></code></pre></div>
 <p>Now let’s create this initial setup for <code>iSEE</code> using
 <code><a href="https://rdrr.io/pkg/iSEEfier/man/iSEEnrich.html" class="external-link">iSEEnrich()</a></code></p>
@@ -453,18 +456,29 @@ linked between each other without running the app with
 <code><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_tiles.html" class="external-link">view_initial_tiles()</a></code> and
 <code><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_network.html" class="external-link">view_initial_network()</a></code>:</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># display a graphical representation of the initial configuration, where the panels are identified by their corresponding colors</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_tiles.html" class="external-link">view_initial_tiles</a></span><span class="op">(</span>initial <span class="op">=</span> <span class="va">initial_1</span><span class="op">)</span></span>
-<span><span class="co"># display a network visualization for the panels</span></span>
+<code class="sourceCode R"><span><span class="co">## Display a graphical representation of the initial configuration, where the panels are identified by their corresponding colors</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_tiles.html" class="external-link">view_initial_tiles</a></span><span class="op">(</span>initial <span class="op">=</span> <span class="va">initial_1</span><span class="op">)</span></span></code></pre></div>
+<p><img src="workshop_iSEEfier_files/figure-html/unnamed-chunk-34-1.png" width="672"></p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Display a network visualization for the panels</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_network.html" class="external-link">view_initial_network</a></span><span class="op">(</span><span class="va">initial_1</span>, plot_format <span class="op">=</span> <span class="st">"igraph"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="workshop_iSEEfier_files/figure-html/unnamed-chunk-35-1.png" width="768"></p>
+<pre><code><span><span class="co">#&gt; IGRAPH 5c2405a DN-- 17 5 -- </span></span>
+<span><span class="co">#&gt; + attr: name (v/c), color (v/c)</span></span>
+<span><span class="co">#&gt; + edges from 5c2405a (vertex names):</span></span>
+<span><span class="co">#&gt; [1] ReducedDimensionPlot1-&gt;ColumnDataPlot1  </span></span>
+<span><span class="co">#&gt; [2] ReducedDimensionPlot2-&gt;ColumnDataPlot1  </span></span>
+<span><span class="co">#&gt; [3] ReducedDimensionPlot3-&gt;ColumnDataPlot1  </span></span>
+<span><span class="co">#&gt; [4] ReducedDimensionPlot4-&gt;ColumnDataPlot1  </span></span>
+<span><span class="co">#&gt; [5] ReducedDimensionPlot5-&gt;FeatureAssayPlot5</span></span></code></pre>
 <p>Another alternative for network visualization would use the
 interactive widget provided by <code>visNetwork</code>:</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_network.html" class="external-link">view_initial_network</a></span><span class="op">(</span><span class="va">initial_1</span>, plot_format <span class="op">=</span> <span class="st">"visNetwork"</span><span class="op">)</span></span></code></pre></div>
 <p>It is also possible to combine multiple initials into one:</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">merged_config</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/glue_initials.html" class="external-link">glue_initials</a></span><span class="op">(</span><span class="va">initial_1</span>, <span class="va">initial_2</span><span class="op">)</span></span>
-<span><span class="co"># check out the content of merged_config</span></span>
+<span><span class="co">## Check out the content of merged_config</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_tiles.html" class="external-link">view_initial_tiles</a></span><span class="op">(</span>initial <span class="op">=</span> <span class="va">merged_config</span><span class="op">)</span></span></code></pre></div>
 <p><code><a href="https://rdrr.io/pkg/iSEEfier/man/iSEEfier-pkg.html" class="external-link">?iSEEfier</a></code> is always your friend whenever you need
 further documentation on the package/a certain function and how to use
@@ -472,13 +486,15 @@ it.</p>
 <p>Feel free to explore previous <code>iSEE</code> demos and
 <code>workshops</code>, as well as the <code>iSEEfier</code> vignette,
 for a deeper dive into using these tools. They’ll help you make the most
-of them :)</p>
+of them :)<br>
+If you look for a place to start and have a full one-day workshop,
+please refer to <a href="https://isee.github.io/iUSEiSEE/" class="external-link"><code>https://isee.github.io/iUSEiSEE/</code></a>.</p>
 </div>
 </div>
 <div class="section level3">
 <h3 class="unnumbered" id="session-info">Session info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h3>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; R version 4.4.1 (2024-06-14)</span></span>
 <span><span class="co">#&gt; Platform: aarch64-apple-darwin20</span></span>
@@ -528,24 +544,48 @@ of them :)</p>
 <span><span class="co">#&gt;  [52] rstudioapi_0.16.0       abind_1.4-8             yaml_2.3.10            </span></span>
 <span><span class="co">#&gt;  [55] iSEEu_1.17.0            doParallel_1.0.17       codetools_0.2-20       </span></span>
 <span><span class="co">#&gt;  [58] miniUI_0.1.1.1          lattice_0.22-6          tibble_3.2.1           </span></span>
-<span><span class="co">#&gt;  [61] KEGGREST_1.45.1         shiny_1.9.1             evaluate_1.0.0         </span></span>
-<span><span class="co">#&gt;  [64] desc_1.4.3              Biostrings_2.73.1       circlize_0.4.16        </span></span>
-<span><span class="co">#&gt;  [67] pillar_1.9.0            BiocManager_1.30.25     DT_0.33                </span></span>
-<span><span class="co">#&gt;  [70] foreach_1.5.2           shinyjs_2.1.0           generics_0.1.3         </span></span>
-<span><span class="co">#&gt;  [73] ggplot2_3.5.1           munsell_0.5.1           scales_1.3.0           </span></span>
-<span><span class="co">#&gt;  [76] BiocStyle_2.33.1        xtable_1.8-4            glue_1.7.0             </span></span>
-<span><span class="co">#&gt;  [79] tools_4.4.1             hexbin_1.28.4           colourpicker_1.3.0     </span></span>
-<span><span class="co">#&gt;  [82] visNetwork_2.1.2        fs_1.6.4                grid_4.4.1             </span></span>
-<span><span class="co">#&gt;  [85] AnnotationDbi_1.67.0    colorspace_2.1-1        nlme_3.1-166           </span></span>
-<span><span class="co">#&gt;  [88] GenomeInfoDbData_1.2.12 vipor_0.4.7             cli_3.6.3              </span></span>
-<span><span class="co">#&gt;  [91] textshaping_0.4.0       fansi_1.0.6             viridisLite_0.4.2      </span></span>
-<span><span class="co">#&gt;  [94] S4Arrays_1.5.7          ComplexHeatmap_2.21.0   dplyr_1.1.4            </span></span>
-<span><span class="co">#&gt;  [97] gtable_0.3.5            rintrojs_0.3.4          sass_0.4.9             </span></span>
-<span><span class="co">#&gt; [100] digest_0.6.37           SparseArray_1.5.36      ggrepel_0.9.6          </span></span>
-<span><span class="co">#&gt; [103] rjson_0.2.23            htmlwidgets_1.6.4       memoise_2.0.1          </span></span>
-<span><span class="co">#&gt; [106] htmltools_0.5.8.1       pkgdown_2.1.1           lifecycle_1.0.4        </span></span>
-<span><span class="co">#&gt; [109] httr_1.4.7              shinyWidgets_0.8.7      GlobalOptions_0.1.2    </span></span>
-<span><span class="co">#&gt; [112] mime_0.12               bit64_4.5.2</span></span></code></pre></div>
+<span><span class="co">#&gt;  [61] withr_3.0.1             KEGGREST_1.45.1         shiny_1.9.1            </span></span>
+<span><span class="co">#&gt;  [64] evaluate_1.0.0          desc_1.4.3              Biostrings_2.73.1      </span></span>
+<span><span class="co">#&gt;  [67] circlize_0.4.16         pillar_1.9.0            BiocManager_1.30.25    </span></span>
+<span><span class="co">#&gt;  [70] DT_0.33                 foreach_1.5.2           shinyjs_2.1.0          </span></span>
+<span><span class="co">#&gt;  [73] generics_0.1.3          ggplot2_3.5.1           munsell_0.5.1          </span></span>
+<span><span class="co">#&gt;  [76] scales_1.3.0            BiocStyle_2.33.1        xtable_1.8-4           </span></span>
+<span><span class="co">#&gt;  [79] glue_1.7.0              tools_4.4.1             hexbin_1.28.4          </span></span>
+<span><span class="co">#&gt;  [82] colourpicker_1.3.0      visNetwork_2.1.2        fs_1.6.4               </span></span>
+<span><span class="co">#&gt;  [85] grid_4.4.1              AnnotationDbi_1.67.0    colorspace_2.1-1       </span></span>
+<span><span class="co">#&gt;  [88] nlme_3.1-166            GenomeInfoDbData_1.2.12 vipor_0.4.7            </span></span>
+<span><span class="co">#&gt;  [91] cli_3.6.3               textshaping_0.4.0       fansi_1.0.6            </span></span>
+<span><span class="co">#&gt;  [94] viridisLite_0.4.2       S4Arrays_1.5.7          ComplexHeatmap_2.21.0  </span></span>
+<span><span class="co">#&gt;  [97] dplyr_1.1.4             gtable_0.3.5            rintrojs_0.3.4         </span></span>
+<span><span class="co">#&gt; [100] sass_0.4.9              digest_0.6.37           SparseArray_1.5.36     </span></span>
+<span><span class="co">#&gt; [103] ggrepel_0.9.6           farver_2.1.2            rjson_0.2.23           </span></span>
+<span><span class="co">#&gt; [106] htmlwidgets_1.6.4       memoise_2.0.1           htmltools_0.5.8.1      </span></span>
+<span><span class="co">#&gt; [109] pkgdown_2.1.1           lifecycle_1.0.4         httr_1.4.7             </span></span>
+<span><span class="co">#&gt; [112] shinyWidgets_0.8.7      GlobalOptions_0.1.2     mime_0.12              </span></span>
+<span><span class="co">#&gt; [115] bit64_4.5.2</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Bremner1994-hintonplots" class="csl-entry">
+Bremner, Frederick J, Stephen J Gotts, and Dina L Denham. 1994.
+<span>“Hinton Diagrams: Viewing Connection Strengths in Neural
+Networks.”</span> <em>Behav. Res. Methods Instrum. Comput.</em> 26 (2):
+215–18.
+</div>
+<div id="ref-Hinton1991-hintondiagram" class="csl-entry">
+Hinton, Geoffrey E, and Tim Shallice. 1991. <span>“Lesioning an
+Attractor Network: Investigations of Acquired Dyslexia.”</span>
+<em>Psychological Review</em> 98 (1): 74–95.
+</div>
+<div id="ref-Tasic2016-ga" class="csl-entry">
+Tasic, Bosiljka, Vilas Menon, Thuc Nghi Nguyen, Tae Kyung Kim, Tim
+Jarsky, Zizhen Yao, Boaz Levi, et al. 2016. <span>“Adult Mouse Cortical
+Cell Taxonomy Revealed by Single Cell Transcriptomics.”</span> <em>Nat.
+Neurosci.</em> 19 (2): 335–46.
+</div>
+</div>
 </div>
 </div>
   </div>
