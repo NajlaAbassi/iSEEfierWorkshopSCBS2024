@@ -16,8 +16,7 @@ remotes::install_github("NajlaAbassi/iSEEfierWorkshopSCBS2024",
 ### How to use this workshop
 
 -   Install the package
--   Download/clone this repo
--   Open the `iSEEfierWorkshop2024.Rproj` project file
+-   Download this repo
 -   Navigate to the `vignettes` folder
 -   Open the `workshop_iSEEfier.Rmd` Rmarkdown file and execute its content live!
 
