@@ -8,7 +8,7 @@ Some materials in this workshop were adapted from resources created by the `iSEE
 
 ``` r 
 library("remotes")
-remotes::install_github("NajlaAbassi/iSEEfierWorkshop2024",
+remotes::install_github("NajlaAbassi/iSEEfierWorkshopSCBS2024",
                 dependencies = TRUE,
                 build_vignettes = TRUE)
 ```
