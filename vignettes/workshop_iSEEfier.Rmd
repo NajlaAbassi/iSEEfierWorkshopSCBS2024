@@ -5,7 +5,7 @@ author:
   affiliation:
   - Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), Mainz
   email: >
-    najla.abassi@uni-mainz.de </br>
+    najla.abassi@uni-mainz.de </br> </br>
     Some materials in this workshop were adapted from resources created by the `iSEE` core development team 
 output: rmarkdown::html_vignette
 editor_options: 
