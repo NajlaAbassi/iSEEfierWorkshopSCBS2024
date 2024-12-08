@@ -2,11 +2,11 @@
 title: "iSEEfier Workshop SCBC2024"
 author:
 - name: Najla Abassi
-- affiliation:
+  affiliation:
   - Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), Mainz
-- email: >
+  email: >
     najla.abassi@uni-mainz.de
-- description: >
+subtitle: >
     Some materials in this workshop were adapted from resources created by the `iSEE` core development team 
 output: rmarkdown::html_vignette
 editor_options: 
@@ -33,7 +33,6 @@ knitr::opts_chunk$set(
 SCREENSHOT <- function(x, ...) knitr::include_graphics(x)
 ```
 
-
 # Streamlining Omics Data Visualization with `iSEE` and `iSEEfier`
 
 ## Introduction to `iSEE`
@@ -44,13 +43,12 @@ The `r BiocStyle::Biocpkg("iSEE")` package is a flexible, powerful and extendibl
 
 `r BiocStyle::Biocpkg("iSEE")` was designed around the `r BiocStyle::Biocpkg("SummarizedExperiment")` class, a container widely used throughout the *Bioconductor* project. Briefly, the `r BiocStyle::Biocpkg("SummarizedExperiment")` class provides a container keeping matrices of assay data, sample metadata, and feature metadata.
 
-<img src="img/SummarizedExperiment.png" alt="SummarizedExperiment (source: the package vignette; https://bioconductor.org/packages/SummarizedExperiment/)" width="100%">
+<img src="img/SummarizedExperiment.png" alt="SummarizedExperiment (source: the package vignette; https://bioconductor.org/packages/SummarizedExperiment/)" width="100%"/>
 
-In this workshop we will use a demonstration dataset of single cell RNAseq from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216)[@Tasic2016-ga].  
+In this workshop we will use a demonstration dataset of single cell RNAseq from Tasic et al. (2016) "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics" [doi:10.1038/nn.4216](https://doi.org/10.1038/nn.4216)[@Tasic2016-ga].\
 The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")` Bioconductor package, and is stored in an object of class `r BiocStyle::Biocpkg("SingleCellExperiment")`, which is a class that inherits from the `SummarizedExperiment` class. It includes additional slots and methods like metadata related to individual cells and their associated dimensionality reductions.
 
-<img src="img/SingleCellExperiment.png" alt="SingleCellExperiment (source: the package vignette; \<https://bioconductor.org/packages/SingleCellExperiment/)" width="100%">
-
+<img src="img/SingleCellExperiment.png" alt="SingleCellExperiment (source: the package vignette; \&lt;https://bioconductor.org/packages/SingleCellExperiment/)" width="100%"/>
 
 We processed the data beforehand to save some time.
 
@@ -114,7 +112,6 @@ shiny::runApp(app,launch.browser = TRUE)
 # don't run
 SCREENSHOT("img/iSEE_RedDimPlot.png", delay = 10)
 ```
-
 
 #### `ColumnDataPlot`
 
@@ -184,7 +181,7 @@ shiny::runApp(app,launch.browser = TRUE)
 SCREENSHOT("img/iSEE_SampleAssayPlt.png", delay = 10)
 ```
 
-#### `RowDataTable` 
+#### `RowDataTable` {#rowdatatable}
 
 The row data table displays all information provided in the `rowData` slot of the `SummarizedExperiment` object, leveraging the interactivity provided by the `r BiocStyle::CRANpkg("DT")` package.
 
@@ -237,7 +234,6 @@ shiny::runApp(app,launch.browser = TRUE)
 # don't run
 SCREENSHOT("img/iSEE_data_param.png", delay = 10)
 ```
-
 
 #### Visual parameters
 
@@ -306,8 +302,7 @@ feature_list_1 <- c("Bcl6", "Arf5", "Cxcr5","Grip1")
 cluster_1 <- "Primary.Type"
 ```
 
-It is also possible to load the feature list as a `data.frame`, if our genes of interest already existed in a table.
-Now we can pass these parameters into `iSEEinit()` to create a customized initial configuration:
+It is also possible to load the feature list as a `data.frame`, if our genes of interest already existed in a table. Now we can pass these parameters into `iSEEinit()` to create a customized initial configuration:
 
 ```{r iSEEinit}
 ## Create an initial state with iSEEinit
@@ -333,7 +328,7 @@ This is how it would look like:
 SCREENSHOT("img/isee-on-fier.png", delay = 10)
 ```
 
-While we are visualizing the expression of these genes, we might want to take some notes (gene X is more expressed in a certain cell type/cluster than some others, maybe we are trying to annotate the cells ourselves if the annotation wasn't available...).  
+While we are visualizing the expression of these genes, we might want to take some notes (gene X is more expressed in a certain cell type/cluster than some others, maybe we are trying to annotate the cells ourselves if the annotation wasn't available...).\
 For this, we used the argument `add_markdown_panel = TRUE`. It will display a `MarkdownBoard` panel where we can note our observations without leaving the app.
 
 #### `iSEEmarker`
@@ -356,9 +351,7 @@ initial_2 <- iSEEmarker(
   selection_plot_format = "ColumnDataPlot")
 ```
 
-This function returns a list of panels, with the goal of visualizing the expression of
-marker genes selected from the `DynamicMarkerTable` in each cell cell type. Unlike `iSEEinit()`, which requires us to specify a list of genes, `iSEEmarker()` utilizes the `DynamicMarkerTable`, a custom panel in `iSEE`, that performs statistical testing through the `findMarkers()` function from the `r BiocStyle::Biocpkg("scran")` package.
-To start exploring the marker genes of each cell type with `iSEE`, we run as usual:
+This function returns a list of panels, with the goal of visualizing the expression of marker genes selected from the `DynamicMarkerTable` in each cell cell type. Unlike `iSEEinit()`, which requires us to specify a list of genes, `iSEEmarker()` utilizes the `DynamicMarkerTable`, a custom panel in `iSEE`, that performs statistical testing through the `findMarkers()` function from the `r BiocStyle::Biocpkg("scran")` package. To start exploring the marker genes of each cell type with `iSEE`, we run as usual:
 
 ```{r, message=FALSE, echo=FALSE}
 app <- iSEE::iSEE(sce, initial = initial_2)
@@ -410,8 +403,7 @@ results <- iSEEnrich(
 )
 ```
 
-`iSEEnrich` will specifically return a list with the updated `sce` object and
-its associated `initial` configuration. To start the `iSEE` instance we run:
+`iSEEnrich` will specifically return a list with the updated `sce` object and its associated `initial` configuration. To start the `iSEE` instance we run:
 
 ```{r, message=FALSE, echo=FALSE}
 app <- iSEE::iSEE(results$sce, initial = results$initial)
@@ -436,7 +428,6 @@ We can check the initial's content, or how the included panels are linked betwee
 view_initial_tiles(initial = initial_1)
 ```
 
-
 ```{r fig.width=8, fig.height=8}
 ## Display a network visualization for the panels
 view_initial_network(initial_1, plot_format = "igraph")
@@ -458,7 +449,7 @@ view_initial_tiles(initial = merged_config)
 
 `?iSEEfier` is always your friend whenever you need further documentation on the package/a certain function and how to use it.
 
-Feel free to explore previous `iSEE` demos and `workshops`, as well as the `iSEEfier` vignette, for a deeper dive into using these tools. They’ll help you make the most of them :)  
+Feel free to explore previous `iSEE` demos and `workshops`, as well as the `iSEEfier` vignette, for a deeper dive into using these tools. They’ll help you make the most of them :)\
 If you look for a place to start and have a full one-day workshop, please refer to [`https://isee.github.io/iUSEiSEE/`](https://isee.github.io/iUSEiSEE/).
 
 ## Session info {.unnumbered}
