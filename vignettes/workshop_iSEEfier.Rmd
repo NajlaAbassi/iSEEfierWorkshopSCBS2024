@@ -290,7 +290,7 @@ To make this process simpler, we can use the `r BiocStyle::Biocpkg("iSEEfier")` 
 
 In this section, we will illustrate a simple example of how to use `r BiocStyle::Biocpkg("iSEEfier")`. We will use the same allen data we worked with during this workshop.
 
-#### `iSEEinit`
+### `iSEEinit`
 
 For example, we can be interested in visualizing the expression of *Bcl6*, *Arf5*, *Cxcr5* and *Grip1* genes all at once. We start by providing a couple of parameters:
 
@@ -331,7 +331,7 @@ SCREENSHOT("img/isee-on-fier.png", delay = 10)
 While we are visualizing the expression of these genes, we might want to take some notes (gene X is more expressed in a certain cell type/cluster than some others, maybe we are trying to annotate the cells ourselves if the annotation wasn't available...).\
 For this, we used the argument `add_markdown_panel = TRUE`. It will display a `MarkdownBoard` panel where we can note our observations without leaving the app.
 
-#### `iSEEmarker`
+### `iSEEmarker`
 
 In many cases, we are interested in determining the identity of our cell clusters, or further subset our cells types. That's where `iSEEmarker()` comes in handy. Similar to `iSEEinit()`, we need a couple of parameters to be set:
 
@@ -367,7 +367,7 @@ This is how it would look like:
 SCREENSHOT("img/iSEEmarker.png", delay = 10)
 ```
 
-#### `iSEEnrich`
+### `iSEEnrich`
 
 At times, it can be useful to explore particular sets of features and their associated genes. This is where `iSEEnrich` proves to be especially valuable. We will first set up the necessary arguments:
 
@@ -419,7 +419,7 @@ This is how it would look like:
 SCREENSHOT("img/iSEEnrich.png", delay = 10)
 ```
 
-#### `view_initial_*`
+### `view_initial_*`
 
 We can check the initial's content, or how the included panels are linked between each other without running the app with `view_initial_tiles()` and `view_initial_network()`:
 
