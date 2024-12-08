@@ -333,10 +333,10 @@ need to configure each <code>iSEE</code> panel individually.</p>
 <p>In this section, we will illustrate a simple example of how to use
 <em><a href="https://bioconductor.org/packages/3.20/iSEEfier" class="external-link">iSEEfier</a></em>.
 We will use the same allen data we worked with during this workshop.</p>
-<div class="section level5">
-<h5 id="iseeinit">
+<div class="section level4">
+<h4 id="iseeinit">
 <code>iSEEinit</code><a class="anchor" aria-label="anchor" href="#iseeinit"></a>
-</h5>
+</h4>
 <p>For example, we can be interested in visualizing the expression of
 <em>Bcl6</em>, <em>Arf5</em>, <em>Cxcr5</em> and <em>Grip1</em> genes
 all at once. We start by providing a couple of parameters:</p>
@@ -370,10 +370,10 @@ For this, we used the argument <code>add_markdown_panel = TRUE</code>.
 It will display a <code>MarkdownBoard</code> panel where we can note our
 observations without leaving the app.</p>
 </div>
-<div class="section level5">
-<h5 id="iseemarker">
+<div class="section level4">
+<h4 id="iseemarker">
 <code>iSEEmarker</code><a class="anchor" aria-label="anchor" href="#iseemarker"></a>
-</h5>
+</h4>
 <p>In many cases, we are interested in determining the identity of our
 cell clusters, or further subset our cells types. That’s where
 <code><a href="https://rdrr.io/pkg/iSEEfier/man/iSEEmarker.html" class="external-link">iSEEmarker()</a></code> comes in handy. Similar to
@@ -404,10 +404,10 @@ package. To start exploring the marker genes of each cell type with
 <p>This is how it would look like:</p>
 <p><img src="img%2FiSEEmarker.png" width="100%"></p>
 </div>
-<div class="section level5">
-<h5 id="iseenrich">
+<div class="section level4">
+<h4 id="iseenrich">
 <code>iSEEnrich</code><a class="anchor" aria-label="anchor" href="#iseenrich"></a>
-</h5>
+</h4>
 <p>At times, it can be useful to explore particular sets of features and
 their associated genes. This is where <code>iSEEnrich</code> proves to
 be especially valuable. We will first set up the necessary
@@ -449,10 +449,10 @@ configuration. To start the <code>iSEE</code> instance we run:</p>
 <p>This is how it would look like:</p>
 <p><img src="img%2FiSEEnrich.png" width="100%"></p>
 </div>
-<div class="section level5">
-<h5 id="view_initial_">
+<div class="section level4">
+<h4 id="view_initial_">
 <code>view_initial_*</code><a class="anchor" aria-label="anchor" href="#view_initial_"></a>
-</h5>
+</h4>
 <p>We can check the initial’s content, or how the included panels are
 linked between each other without running the app with
 <code><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_tiles.html" class="external-link">view_initial_tiles()</a></code> and
@@ -465,9 +465,9 @@ linked between each other without running the app with
 <code class="sourceCode R"><span><span class="co">## Display a network visualization for the panels</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/iSEEfier/man/view_initial_network.html" class="external-link">view_initial_network</a></span><span class="op">(</span><span class="va">initial_1</span>, plot_format <span class="op">=</span> <span class="st">"igraph"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="workshop_iSEEfier_files/figure-html/unnamed-chunk-35-1.png" width="768"></p>
-<pre><code><span><span class="co">#&gt; IGRAPH b8109b1 DN-- 17 5 -- </span></span>
+<pre><code><span><span class="co">#&gt; IGRAPH 2664d62 DN-- 17 5 -- </span></span>
 <span><span class="co">#&gt; + attr: name (v/c), color (v/c)</span></span>
-<span><span class="co">#&gt; + edges from b8109b1 (vertex names):</span></span>
+<span><span class="co">#&gt; + edges from 2664d62 (vertex names):</span></span>
 <span><span class="co">#&gt; [1] ReducedDimensionPlot1-&gt;ColumnDataPlot1  </span></span>
 <span><span class="co">#&gt; [2] ReducedDimensionPlot2-&gt;ColumnDataPlot1  </span></span>
 <span><span class="co">#&gt; [3] ReducedDimensionPlot3-&gt;ColumnDataPlot1  </span></span>
