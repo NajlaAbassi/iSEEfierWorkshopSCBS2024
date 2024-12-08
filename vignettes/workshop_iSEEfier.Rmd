@@ -2,10 +2,11 @@
 title: "iSEEfier Workshop SCBC2024"
 author:
 - name: Najla Abassi
-  affiliation:
+- affiliation:
   - Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), Mainz
-  email: >
-    najla.abassi@uni-mainz.de </br> </br>
+- email: >
+    najla.abassi@uni-mainz.de
+- description: >
     Some materials in this workshop were adapted from resources created by the `iSEE` core development team 
 output: rmarkdown::html_vignette
 editor_options: 
