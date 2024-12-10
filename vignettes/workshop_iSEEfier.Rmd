@@ -259,7 +259,7 @@ SCREENSHOT("img/iSEE_viz_param.png", delay = 10)
 
 The `Selection parameters` collapsible box provides controls to transfer selections of points (features or samples) between panels.
 
-We demonstrate examples of point transmission in the separate vignette of [workshop recipes](recipes.html)
+We demonstrate examples of point transmission in the separate vignette of [workshop recipes](https://isee.github.io/iSEEWorkshopEuroBioc2020/articles/recipes.html)
 
 ```{r selecparam, message=FALSE, echo = FALSE}
 app <- iSEE::iSEE(sce, initial = list(ReducedDimensionPlot(PanelWidth = 12L,
