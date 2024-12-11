@@ -284,6 +284,13 @@ Now we have seen how powerful of a tool `iSEE` can be. As we previously learned,
 iSEE(sce)
 ```
 
+We could also costumize the initial configuration by setting it up through the `initial` parameter of `iSEE()` :
+
+```{r, eval=FALSE}
+iSEE(sce, initial = )
+```
+
+
 However, customizing our visualization session can be cumbersome, as it may require adding or removing different panels based on our needs. This process often includes multiple steps, such as selecting a gene of interest or coloring by a specific `colData`, and may even involve writing multiple lines of code.
 
 To make this process simpler, we can use the `r BiocStyle::Biocpkg("iSEEfier")` package, which streamlines the setup (or if you will, firing up) of an `iSEE` instance with just a small chunk of code, avoiding the need to configure each `iSEE` panel individually.
